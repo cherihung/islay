@@ -1,0 +1,96 @@
+// HELPER CLASSES
+.fix {
+display:inline-block;
+overflow:hidden;
+*zoom: 1; /** for IE6/7 only **/
+   
+   &:before, &:after {
+     content: " "; 
+    display: table;
+    visibility:hidden 
+   }
+   
+   &:after {
+    clear: both;
+   }
+
+} //.fix
+
+.clear {
+clear:both;
+}
+.right {
+float:right;
+}
+.left {
+float:left;
+}
+.affixed {
+  position: fixed;
+}
+.center {
+  text-align: center;
+  .center_page();
+}
+
+/*
+ * Visibility helper classes, adpated from h5bp.com/u
+ */
+//hide visually from browsers and screenreaders
+//MT utilities had .hidden for this, check if needed
+.hide {
+    display: none !important;
+    visibility: hidden;
+}
+//show for all devices
+.show {
+  display: block;
+  visibility: visible;
+}
+//hide in browser, but visible for screenreaders
+.browserhide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.browserhide.focusable:active,
+.browserhide.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+//hide visually from all. but keep element to maintain layout
+.invisible {
+    visibility: hidden;
+}
+.inline {
+  display: inline;
+}
+
+
+/*
+ * image reaplcement helper class, adpated from h5bp.com/u
+ */ 
+.imgreplace {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+.imgreplace:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+

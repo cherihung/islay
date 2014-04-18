@@ -1,0 +1,101 @@
+//colors definitions
+$gray: #666;
+$darkGray: #353535;
+$mildGray: #424242;
+$lightGray: #e7e7e7;
+$sweetRed: #f04124;
+$warmGreen: #43AC6A;
+$tangerine: #F2A925;
+$paleYellow: #feffc9;
+$aquaBlue: #008CBA;
+$paleBlue: #a0d3e8;
+$white: #fcfcfc;
+
+//color usage definitions
+$link-hover-color: $tangerine;
+$site-head-background: $mildGray;
+$site-footer-background: $gray;
+$site-footer-link: $paleYellow;
+$stripe-base-color: #FFAB68;
+
+//mixin & functions
+
+//generate a stripe pattern
+
+//generate random percentage number
+@function rand($max) {
+
+  @return percentage(random($max)/100); 
+
+}
+
+//function to 1) generate hues based on a given hex color 2) join hues with explicit stops to make a list 3) return a set of harsh-stop gradient
+@function create_gradient_harsh($color, $stops) {
+	
+	$number_of_stops: length($stops);
+	$hues: ();
+
+ @for $i from 1 to $number_of_stops {
+    @if nth($stops, $i) > 1 {
+      $hue: adjust-hue($color, rand(100));
+
+     $hues: append($hues, $hue nth($stops, $i), comma); 
+      @if $i < $number_of_stops {
+        $hues: append($hues, $hue nth($stops, $i + 1), comma);
+      }
+    }
+ }
+  @return $hues;
+}
+
+//function to 1) generate hues based on a given hex color 2) join hues with explicit stops to make a list 3) return a set of blending gradient
+@function create_gradient_blended($color, $stops) {
+	
+	$number_of_stops: length($stops) + 1;
+	$hues: ();
+
+	@for $i from 1 to $number_of_stops {
+    $hue: adjust-hue($color, rand(100)); 
+    $stop: nth($stops, $i);
+	  $hues: append($hues, $hue nth($stops, $i), comma);  
+  }
+	@return $hues;
+}
+
+@function create_stripes($color, $stops, $direction: to right) {
+
+   @return linear-gradient($direction, call(create_gradient_harsh, $color, $stops));
+
+}
+
+@function create_gradient($color, $stops, $direction: to right) {
+
+   @return linear-gradient($direction, call(create_gradient_blended, $color, $stops));
+
+}
+
+
+
+/*
+@function hue_bar($color, $direction, $strips) {
+	 
+	$type: if($direction == 'h', 'horizontal', if($direction == 'v', 'vertical'));
+
+	@return -webkit-linear-gradient(0deg, hsla(175,70%,40%,1) 26.666667%, hsla(150,70%,40%,1) 6.666667%, hsla(150,70%,40%,1) 3.333333%, hsla(75,70%,40%,1) 16.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
+} */
+/*
+h1 {
+  margin: 30px auto;
+  text-align: center;
+  width: 750px;
+  color: #222;
+  font-size: 10em;
+	background-image: -webkit-linear-gradient(0deg, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
+	background-image: -moz-linear-gradient(0deg, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
+	background-image: linear-gradient(to right, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
+	-webkit-background-size: 100% 5px;
+	-moz-background-size: 100% 5px;
+	background-size: 100% 10px;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+} */
