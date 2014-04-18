@@ -62,40 +62,9 @@ $stripe-base-color: #FFAB68;
 	@return $hues;
 }
 
-@function create_stripes($color, $stops, $direction: to right) {
-
-   @return linear-gradient($direction, call(create_gradient_harsh, $color, $stops));
-
-}
-
-@function create_gradient($color, $stops, $direction: to right) {
-
-   @return linear-gradient($direction, call(create_gradient_blended, $color, $stops));
+//function calls to make stripes or gradient, expected $type options: harsh or blended
+@function create_stripes($color, $stops, $direction: to right, $type: harsh) {
+    
+   @return linear-gradient($direction, call(create_gradient_#{$type}, $color, $stops));
 
 }
-
-
-
-/*
-@function hue_bar($color, $direction, $strips) {
-	 
-	$type: if($direction == 'h', 'horizontal', if($direction == 'v', 'vertical'));
-
-	@return -webkit-linear-gradient(0deg, hsla(175,70%,40%,1) 26.666667%, hsla(150,70%,40%,1) 6.666667%, hsla(150,70%,40%,1) 3.333333%, hsla(75,70%,40%,1) 16.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-} */
-/*
-h1 {
-  margin: 30px auto;
-  text-align: center;
-  width: 750px;
-  color: #222;
-  font-size: 10em;
-	background-image: -webkit-linear-gradient(0deg, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-	background-image: -moz-linear-gradient(0deg, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-	background-image: linear-gradient(to right, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-	-webkit-background-size: 100% 5px;
-	-moz-background-size: 100% 5px;
-	background-size: 100% 10px;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
-} */

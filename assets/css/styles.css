@@ -1,26 +1,3 @@
-﻿/*
-@function hue_bar($color, $direction, $strips) {
-	 
-	$type: if($direction == 'h', 'horizontal', if($direction == 'v', 'vertical'));
-
-	@return -webkit-linear-gradient(0deg, hsla(175,70%,40%,1) 26.666667%, hsla(150,70%,40%,1) 6.666667%, hsla(150,70%,40%,1) 3.333333%, hsla(75,70%,40%,1) 16.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-} */
-/*
-h1 {
-  margin: 30px auto;
-  text-align: center;
-  width: 750px;
-  color: #222;
-  font-size: 10em;
-	background-image: -webkit-linear-gradient(0deg, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-	background-image: -moz-linear-gradient(0deg, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-	background-image: linear-gradient(to right, hsla(175,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 16.666667%, hsla(150,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 33.333333%, hsla(75,70%,40%,1) 50%, hsla(25,70%,40%,1) 50%, hsla(25,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 66.666667%, hsla(10,70%,40%,1) 83.333333%, hsla(300,70%,40%,1) 83.333333%);
-	-webkit-background-size: 100% 5px;
-	-moz-background-size: 100% 5px;
-	background-size: 100% 10px;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
-} */
 meta.foundation-version {
   font-family: "/5.2.2/"; }
 
@@ -3961,7 +3938,7 @@ ul.pagination li a:hover {
     top: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(to right, #ceff68 10%, #ceff68 18%, #fdff68 18%, #fdff68 29%, #d5ff68 29%, #d5ff68 34%, #e4ff68 34%, #e4ff68 55%, #80ff68 55%, #80ff68 73%, #ffec68 73%, #ffec68 85%, #7bff68 85%, #7bff68 100%); }
+    background-image: linear-gradient(to right, #ffba68 10%, #ffba68 18%, #73ff68 18%, #73ff68 29%, #f8ff68 29%, #f8ff68 34%, #87ff68 34%, #87ff68 55%, #7bff68 55%, #7bff68 73%, #8cff68 73%, #8cff68 85%, #73ff68 85%, #73ff68 100%); }
 
 .site-footer a {
   color: #f8cf85; }
