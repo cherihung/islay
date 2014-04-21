@@ -9,11 +9,37 @@
     "use strict";
 
     $(document).ready(function(){
-
-
+       
     });
+    $(window).load(function() {
+      /* $(window).scroll( function(){
+        var top_of_window = $(window).scrollTop();
+           if(top_of_window > 0 && top_of_window <= 500) {
+              scrollIcon(top_of_window);
+            }
+   
+        }); */
+   });
+  
 
 }(jQuery));
+
+// TODO: need finesse 
+function scrollIcon(p) {
+  var icon = $('.blog-logo-bg');
+  var pos;           
+  if(p < 100) {
+      pos  = 0+'px'; //-(p+10)+'px';                     
+      icon.css('background-position', pos+' -20px');
+  } else if(p >= 500) {
+      pos  = -510+'px'; //-(p+10)+'px';                     
+      icon.css('background-position', pos+' -20px');
+  } else {
+      pos  = -(p+10)+'px';                     
+      icon.css('background-position', pos+' -20px');
+  }
+      
+}
 
 (function($,sr){
 

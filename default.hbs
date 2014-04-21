@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{! Document Settings }}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
@@ -15,35 +13,32 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
     <link rel="author" href="https://plus.google.com/u/0/+ChienyiCheriHung/posts"/>
 
-    {{! Styles'n'Scripts }}
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,500,500italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{asset "css/styles.min.css"}}" />   
     <script src="{{asset "js/vendor/modernizr.min.js"}}"></script>
 
-    {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-    {{! MAIN content gets injected here }}
-    <div class="large-4 small-12 columns site-head">
-    {{> sidebar}}
-    </div>
-    <div class="large-8 small-12 columns">
-    {{{body}}}
-    </div>
     
-    <div class="large-12 columns site-footer">
-    {{> footer}}
+    <div class="site-wrapper">
+     <div class="large-4 large-push-7 small-12 columns site-head">
+         {{> sidebar}}
+     </div>
+     <div class="large-6 large-pull-5 small-12 columns site-content">
+           {{{body}}}
+      </div>
+    </div>
+    <div class="site-footer columns large-12">
+            {{> footer}}
     </div>
 
-    {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
     {{! The main JavaScript file for Islay }}
-    <!--<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>-->
     <script type="text/javascript" src="{{asset "js/index.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/foundation.min.js"}}"></script>
     <script>
-    $(document).foundation();
+        $(document).foundation();
     </script>
 </body>
 </html>

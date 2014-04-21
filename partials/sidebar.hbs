@@ -1,11 +1,17 @@
 <header class="site-head-content">
-            <a class="blog-logo" href="{{@blog.url}}">
+		<div class="desktop large-4">
+            <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <a class="blog-logo-bg left" href="{{@blog.url}}"></a>
+            <h4 class="blog-description">{{@blog.description}} by <a href="#author">Chienyi Cheri Hung</a></h4>
+        </div>
+        <div class="mobi">
                 {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <h1 class="blog-title">{{@blog.title}}</h1>
+                <a class="blog-logo" href="{{@blog.url}}">
+                    <img src="{{@blog.logo}}" alt="{{@blog.title}}" title="{{@blog.title}}" />
+                </a>
                 {{/if}}
-            </a>
+            <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a>ss</h1>
             <h4 class="blog-description">{{@blog.description}}</h4>
-             <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
+             <!--<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a> blog-logo-->
+        </div>
 </header>

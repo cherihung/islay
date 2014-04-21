@@ -1,22 +1,28 @@
 //colors definitions
+$black: #0f0f0f;
 $gray: #666;
 $darkGray: #353535;
 $mildGray: #424242;
 $lightGray: #e7e7e7;
 $sweetRed: #f04124;
+$warmRed: #d35a26;
 $warmGreen: #43AC6A;
-$tangerine: #F2A925;
+$sweetGreen: #78c063;
+$tangerine: #f2a026;
 $paleYellow: #feffc9;
 $aquaBlue: #008CBA;
 $paleBlue: #a0d3e8;
 $white: #fcfcfc;
 
 //color usage definitions
+$link-color: $black;
 $link-hover-color: $tangerine;
 $site-head-background: $mildGray;
-$site-footer-background: $gray;
-$site-footer-link: $paleYellow;
-$stripe-base-color: #FFAB68;
+$site-footer-background: #111;
+$stripe-base-color: #c0b363;
+
+//fonts
+$body-font-size: 2rem;
 
 //mixin & functions
 
@@ -66,5 +72,16 @@ $stripe-base-color: #FFAB68;
 @function create_stripes($color, $stops, $direction: to right, $type: harsh) {
     
    @return linear-gradient($direction, call(create_gradient_#{$type}, $color, $stops));
+
+}
+
+@mixin stripe_border($height: 0.8rem) {
+
+    position: absolute;
+    content: '';
+    height: $height;
+    top: 0;
+    left: 0;
+    right: 0;
 
 }

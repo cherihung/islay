@@ -91,23 +91,32 @@
 
 html {
     height: 100%;
-    max-height: 100%;
     font-size: 62.5%;
 }
 
 body {
     height: 100%;
-    max-height: 100%;
-    font-size: 2.0rem;
+    font-size: $body-font-size;
     line-height: 1.6em;
-    color: #3A4145;
-    background: $white;
-    border-top: 0.6rem solid $site-head-background;
+    background: url('../images/color-barrels.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &:before {
+        @include stripe_border();
+
+        $stops: 10%, 18%, 29%, 34%, 55%, 73%, 85%, 100%;
+        background-image: create_stripes($stripe-base-color, $stops, to right);
+     
+    }
+
 }
 
 
 a {
-    color: #4a4a4a;
+    color: $link-color;
     transition: color ease 0.2s;
 
     &:hover {
@@ -184,6 +193,20 @@ hr {
     margin: 3.2em 0;
     padding: 0;
 }
+
+
+::-moz-selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
+::selection {
+    color: #222;
+    background: #D6EDFF;
+    text-shadow: none;
+}
+
 
 
 /* ==========================================================================
@@ -286,41 +309,80 @@ float:left;
     height: 150%;
 }
 
+.desktop {
+    @extend .show-for-large-up;
+}
+.mobi {
+    @extend .hide-for-large-up;
+}
+
 /* ==========================================================================
    4. General - The main styles for the the theme
 ========================================================================== */
 
-/* Big cover image on the home page */
-.site-head {
-    position: fixed;
-    top: 0;
-    right: 0;
-    color: $lightGray;
-    height: 100%;
-    background: $site-head-background no-repeat center center;
-    background-size: cover;
-    min-height: 10em;   
-    -webkit-box-shadow: inset 9px 0px 22px -9px rgba(34,34,34,0.75);
-    -moz-box-shadow: inset 9px 0px 22px -9px rgba(34,34,34,0.75);
-    box-shadow: inset 9px 0px 22px -9px rgba(34,34,34,0.75);
+.site-head {    
 
-    .blog-title, .blog-description, a {
-        color: $white;
+    h1, h4 {
+        margin: 0;
     }
+    a {
+        color: $lightGray;
+    }
+    h1 {
+        text-align: center;
+    }
+    .blog-title, .blog-description {
+         color: $lightGray;   
+         line-height: 1.65em;     
 
+         a:hover {
+            color: $link-hover-color;
+         }
+    } //.blog-title, .blog-description
 } //.site-head
 
 .site-head-content {
-    padding: 1em;
+
+    .desktop {
+        position: fixed;
+        top: 4rem;
+        background: linear-gradient(to bottom, rgba(red($black),green($black),blue($black),0.6) 0%, rgba(red($black),green($black),blue($black),0.6) 100%);
+        padding: 1em;
+        max-height: 20rem;
+    }
+
+    .mobi {
+        //background: linear-gradient(to bottom, rgba(red($black),green($black),blue($black),0.6) 0%, rgba(red($black),green($black),blue($black),0.6) 100%);
+        margin: 2rem 0 1rem 0;
+        padding: 1em;
+    }
+} //.site-head-content
+
+.blog-logo-bg {
+        display: block;
+        text-indent: -9999px;
+        width: 100px;
+        height: 60px;
+        background: url('../images/logo.svg') no-repeat top left;
+        background-size: 500px 100px;
+        background-position: 0 -20px;   
+}
+
+
+.site-content, .site-wrapper {
+    min-height: 99%;   
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     margin: 4rem auto;
-    padding-bottom: 4rem;
+    padding: 3rem 4rem;
     word-break: break-word;
     hyphens: auto;
-    @extend .row;
+    border-radius: 1em 0 0 0;
+    //background: linear-gradient(to bottom, rgba(red($white),green($white),blue($white),0.8) 0%, rgba(red($white),green($white),blue($white),1) 100%);
+    background: $white;
+    border-bottom: 10px solid $black;
 }
 
 h1.post-title, h2.post-title {
@@ -328,9 +390,21 @@ h1.post-title, h2.post-title {
     font-size: 4rem;
 }
 
-.post-excerpt p {
-    margin: 1.6rem 0 0 0;
-}
+.post-content {
+    a {
+        text-decoration: underline;
+    }
+
+} //.post-content
+
+.post-excerpt {
+    a {
+        text-decoration: underline;
+    }
+    p {
+        margin: 1.6rem 0 0 0;
+    }
+} //.post-excerpt 
 
 .post-meta {
     display: inline-block;
@@ -372,7 +446,7 @@ h1.post-title, h2.post-title {
     transition: background-color 0.2s ease;
 
     a, a:visited {
-        color: $gray;
+        color: $white;
         font-weight: bold;
 
     }
@@ -402,7 +476,7 @@ h1.post-title, h2.post-title {
     text-transform: uppercase;
     
     h3 {
-        color: $gray;
+        color: #fff;
     }
 } //.tag-archive-header
 
@@ -428,7 +502,7 @@ h1.post-title, h2.post-title {
    ========================================================================== */
    
 .site-pagination {
-    @extend .row;
+ 
 }
 
 ul.pagination li {
@@ -444,26 +518,29 @@ ul.pagination li a:hover {
    ========================================================================== */
 
 .site-footer {
-    margin: 8rem 0 0 0;
-    padding: 4rem 0;
-    font-size: 1.3rem;
-    line-height: 1.7em;
-    color: #eee;
-    text-align: left;
-    background: $site-footer-background;
 
- &:before {
-    position: absolute;
-    content: '';
-    height: 1rem;
-    top: 0;
-    left: 0;
-    right: 0;
+        background: $site-footer-background;
+        min-height: 250px;
+        max-width: 100%;
 
-    $stops: 10%, 18%, 29%, 34%, 55%, 73%, 85%, 100%;
-    background-image: create_stripes($stripe-base-color, $stops, to right);
-    }
-}
+        footer {
+        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.7em;
+        color: #eee;
+        text-align: left;
+        padding: 4rem 0;
+        
+     &:before {
+            @include stripe_border();
+
+            $stops: 10%, 18%, 29%, 34%, 55%, 73%, 85%, 100%;
+            background-image: create_stripes($stripe-base-color, $stops, to right);
+        }
+    } //footer
+
+   
+} //.site-footer
 
 .site-footer a {
     color: lighten($link-hover-color, 20%);
@@ -567,3 +644,28 @@ ul.pagination li a:hover {
     opacity: 1;
     top: -33px;
 }
+
+//media queries
+
+/* 0, 640px */
+@media #{$small-only} { 
+    .post {
+        margin: 0 0 10px 0;
+        padding: 3rem;
+        border-radius: 0;
+        border-bottom: 0;       
+    }
+
+    h1.post-title, h2.post-title, .blog-title {  
+        font-size: 3rem;
+    }
+} //media queries small-only 
+
+/* 641px, 1024px */
+@media #{$medium-only} { 
+
+    .post {
+        margin: 0 0 1em 0;
+    }
+
+} //media queries medium-only
