@@ -1,6 +1,7 @@
 <header class="post-header">
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
+        {{> post-meta}}
         <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
+            <p>{{!excerpt words="80"}}{{content}}</p>
         </section>

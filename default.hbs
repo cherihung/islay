@@ -19,7 +19,7 @@
 
     {{ghost_head}}
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}}" id="body">
     
     <div class="site-wrapper">
      <div class="large-4 large-push-7 small-12 columns site-head">
@@ -32,10 +32,10 @@
     <div class="site-footer columns large-12">
             {{> footer}}
     </div>
-
+    <div class="footer-jump" style="display:none"><a class="icon icon-arrow-up" href="#body"></a></div>
     {{ghost_foot}}
     {{! The main JavaScript file for Islay }}
-    <script type="text/javascript" src="{{asset "js/index.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/foundation.min.js"}}"></script>
     <script>
         $(document).foundation();

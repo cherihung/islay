@@ -1,4 +1,11 @@
 {
   "name": "Islay",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "author": "Chienyi Cheri Hung @cyhung",
+  "description": "Customized theme for my Ghost blog @ www.cyh.io",
+  "license": "MIT",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/cherihung/islay.git"
+  }
 }

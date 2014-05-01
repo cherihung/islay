@@ -9,22 +9,28 @@
     "use strict";
 
     $(document).ready(function(){
-       
+
+        
     });
     $(window).load(function() {
-      /* $(window).scroll( function(){
+
+      $(window).scroll( function(){
         var top_of_window = $(window).scrollTop();
-           if(top_of_window > 0 && top_of_window <= 500) {
-              scrollIcon(top_of_window);
+        //toggle the up arrow anchor for jumping back to top of page
+        var anchor = $('.footer-jump');
+           if(top_of_window > 0) {
+              $(anchor).show('fast');
+            } else {
+              $(anchor).hide('fast');
             }
-   
-        }); */
+        }); 
    });
   
 
 }(jQuery));
 
-// TODO: need finesse 
+// TODO: need finishing
+/*
 function scrollIcon(p) {
   var icon = $('.blog-logo-bg');
   var pos;           
@@ -39,7 +45,9 @@ function scrollIcon(p) {
       icon.css('background-position', pos+' -20px');
   }
       
-}
+}*/
+
+
 
 (function($,sr){
 
@@ -68,3 +76,24 @@ function scrollIcon(p) {
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');
+
+//simple smooth scrolling
+(function ($) {
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+     event.preventDefault();
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+});
+
+}(jQuery));

@@ -1701,12 +1701,12 @@ ul.pagination {
   margin-left: -0.3125rem; }
   ul.pagination li {
     height: inherit;
-    color: #222222;
-    font-size: 2.75rem;
+    color: #999999;
+    font-size: 1.75rem;
     margin-left: 0.3125rem; }
     ul.pagination li a {
       display: block;
-      padding: 0.0625rem 1.25rem 0.0625rem 1.25rem;
+      padding: 0.03125rem 1.25rem 0.03125rem 1.25rem;
       color: #999999;
       border-radius: 3px; }
     ul.pagination li:hover a,
@@ -1935,12 +1935,12 @@ a {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1.8rem;
-  line-height: 1.85;
+  font-size: 1.5rem;
+  line-height: 1.55;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
-    font-size: 2.01875rem;
+    font-size: 1.71875rem;
     line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
@@ -2018,8 +2018,8 @@ code {
 ul,
 ol,
 dl {
-  font-size: 1.8rem;
-  line-height: 1.85;
+  font-size: 1.5rem;
+  line-height: 1.55;
   margin-bottom: 1.25rem;
   list-style-position: inside;
   font-family: inherit; }
@@ -2097,7 +2097,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  line-height: 1.85;
+  line-height: 1.55;
   color: #6f6f6f; }
 
 /* Microformats */
@@ -3494,47 +3494,47 @@ th {
 /* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
    ========================================================================== */
-/* Import the font file with the icons in it */
 @font-face {
-  font-family: 'icons';
-  src: url("../fonts/icons.eot");
-  src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
+  font-family: "cyhghost";
+  src: url("../fonts/cyhghost.eot");
+  src: url("../fonts/cyhghost.eot?#iefix") format("embedded-opentype"), url("../fonts/cyhghost.woff") format("woff"), url("../fonts/cyhghost.ttf") format("truetype"), url("../fonts/cyhghost.svg#cyhghost") format("svg");
   font-weight: normal;
   font-style: normal; }
-/* Apply these base styles to all icons */
-.icon-ghost:before,
-.icon-feed:before,
-.icon-twitter:before,
-.icon-google-plus:before,
-.icon-facebook:before {
-  font-family: 'icons';
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "cyhghost" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
   speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
   line-height: 1;
-  text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-/* Each icon is created by inserting the corret character into the
-   content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-  content: "\e000"; }
-
-.icon-feed:before {
-  content: "\e001"; }
-
-.icon-twitter:before {
-  content: "\e002";
-  font-size: 1.1em; }
-
-.icon-google-plus:before {
-  content: "\e003"; }
+.icon-arrow-up:before {
+  content: "a"; }
 
 .icon-facebook:before {
-  content: "\e004"; }
+  content: "b"; }
+
+.icon-ghost:before {
+  content: "c"; }
+
+.icon-github:before {
+  content: "d"; }
+
+.icon-googleplus:before {
+  content: "e"; }
+
+.icon-twitter:before {
+  content: "f"; }
+
+.icon-feed:before {
+  content: "g"; }
+
+.icon-linkedin:before {
+  content: "h"; }
 
 /* ==========================================================================
    2. General - Setting up some base styles
@@ -3559,7 +3559,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(to right, #64c063 10%, #64c063 18%, #63c08c 18%, #63c08c 29%, #b0c063 29%, #b0c063 34%, #98c063 34%, #98c063 55%, #abc063 55%, #abc063 73%, #63c086 73%, #63c086 85%, #86c063 85%, #86c063 100%); }
+    background-image: linear-gradient(to right, #c6f28b 10%, #c6f28b 18%, #f2f08b 18%, #f2f08b 29%, #93f28b 29%, #93f28b 34%, #8ff28b 34%, #8ff28b 55%, #d4f28b 55%, #d4f28b 73%, #c9f28b 73%, #c9f28b 85%, #bdf28b 85%, #bdf28b 100%); }
 
 a {
   color: #0f0f0f;
@@ -3723,6 +3723,27 @@ hr {
   width: 0;
   height: 150%; }
 
+/* CSS tooltip */
+.tooltip {
+  opacity: 0;
+  display: none;
+  padding: 4px 8px 5px 8px;
+  text-align: left;
+  color: #0f0f0f;
+  font-size: 1.5rem;
+  line-height: 1.1em;
+  background: #f0950e;
+  border-radius: 10px;
+  transition: opacity 0.3s ease, top 0.3s ease;
+  max-width: 120px;
+  margin: 3em 0 0 -3em; }
+
+/* On hover, show the tooltip! */
+.icon:hover .tooltip {
+  opacity: 1;
+  display: inline-block;
+  position: absolute; }
+
 /* ==========================================================================
    4. General - The main styles for the the theme
 ========================================================================== */
@@ -3735,27 +3756,28 @@ hr {
 .site-head .blog-title, .site-head .blog-description {
   color: #e7e7e7;
   line-height: 1.65em; }
-  .site-head .blog-title a:hover, .site-head .blog-description a:hover {
-    color: #f2a026; }
+.site-head a:hover {
+  color: #f2a026; }
 
 .site-head-content .desktop {
   position: fixed;
   top: 4rem;
-  background: linear-gradient(to bottom, rgba(15, 15, 15, 0.6) 0%, rgba(15, 15, 15, 0.6) 100%);
-  padding: 1em;
+  padding: 0 4em;
   max-height: 20rem; }
 .site-head-content .mobi {
   margin: 2rem 0 1rem 0;
-  padding: 1em; }
+  padding: 1em;
+  text-align: center; }
 
-.blog-logo-bg {
-  display: block;
-  text-indent: -9999px;
-  width: 100px;
-  height: 60px;
-  background: url("../images/logo.svg") no-repeat top left;
-  background-size: 500px 100px;
-  background-position: 0 -20px; }
+.social-icons {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 0 0.5em 0; }
+  .social-icons a {
+    display: inline-block;
+    margin: 0 0.2em; }
+  .social-icons .icon:last-child .tooltip {
+    margin-left: -5.5em; }
 
 .site-content, .site-wrapper {
   min-height: 99%; }
@@ -3763,16 +3785,15 @@ hr {
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
   margin: 4rem auto;
-  padding: 3rem 4rem;
+  padding: 2rem 3rem;
   word-break: break-word;
   hyphens: auto;
-  border-radius: 1em 0 0 0;
   background: #fcfcfc;
-  border-bottom: 10px solid #0f0f0f; }
+  border-bottom: 10px solid #e7e7e7; }
 
 h1.post-title, h2.post-title {
   margin: 0;
-  font-size: 4rem; }
+  font-size: 3.4rem; }
 
 .post-content a {
   text-decoration: underline; }
@@ -3827,6 +3848,19 @@ h1.post-title, h2.post-title {
     color: #fcfcfc;
     text-decoration: none; }
 
+.footer-jump {
+  position: fixed;
+  font-size: 1.5em;
+  z-index: 99;
+  bottom: 5%;
+  left: 2%; }
+  .footer-jump a {
+    color: #e7e7e7;
+    opacity: 0.4; }
+    .footer-jump a:hover {
+      color: #fcfcfc;
+      opacity: 1; }
+
 /* ==========================================================================
    6. Tag archive
    ========================================================================== */
@@ -3855,9 +3889,10 @@ h1.post-title, h2.post-title {
    ========================================================================== */
 ul.pagination li {
   transition: background-color 0.2s ease; }
-
-ul.pagination li a:hover {
-  color: #fcfcfc; }
+  ul.pagination li a:hover {
+    color: #fcfcfc; }
+  ul.pagination li.pages {
+    padding: 0.0625rem 0 0.0625rem 0; }
 
 /* ==========================================================================
    9. Footer - The bottom of every page
@@ -3880,7 +3915,7 @@ ul.pagination li a:hover {
       top: 0;
       left: 0;
       right: 0;
-      background-image: linear-gradient(to right, #63c073 10%, #63c073 18%, #bfc063 18%, #bfc063 29%, #63c06a 29%, #63c06a 34%, #63c085 34%, #63c085 55%, #95c063 55%, #95c063 73%, #63c094 73%, #63c094 85%, #a2c063 85%, #a2c063 100%); }
+      background-image: linear-gradient(to right, #ecf28b 10%, #ecf28b 18%, #f2d28b 18%, #f2d28b 29%, #8bf28c 29%, #8bf28c 34%, #bcf28b 34%, #bcf28b 55%, #c1f28b 55%, #c1f28b 73%, #d9f28b 73%, #d9f28b 85%, #aef28b 85%, #aef28b 100%); }
 
 .site-footer a {
   color: #f8ca86; }
@@ -3897,86 +3932,39 @@ ul.pagination li a:hover {
     font-size: 1rem;
     margin-right: 0.2em; }
 
-/* The subscribe icon on the footer */
-.subscribe {
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  margin-left: -15px;
-  border: #EBF2F6 1px solid;
+.blog-logo {
   text-align: center;
-  line-height: 2.4rem;
-  border-radius: 50px;
-  background: #fcfcfc;
-  transition: box-shadow 0.5s; }
+  margin: 1em 0; }
+  .blog-logo .logo {
+    display: inline-block;
+    text-indent: -9999px;
+    width: 100px;
+    height: 60px;
+    background: url("../images/logo.svg") no-repeat top left;
+    background-size: 500px 100px;
+    background-position: 0 -20px; }
 
-/* The RSS icon, inserted via icon font */
-.subscribe:before {
-  color: #D2DEE3;
-  font-size: 10px;
-  position: absolute;
-  top: 9px;
-  left: 9px;
-  font-weight: bold;
-  transition: color 0.5s ease; }
-
-/* Add a box shadow to on hover */
-.subscribe:hover {
-  box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
-  transition: box-shadow 0.25s; }
-
-.subscribe:hover:before {
-  color: #50585D; }
-
-/* CSS tooltip saying "Subscribe!" - initially hidden */
-.tooltip {
-  opacity: 0;
-  display: inline-block;
-  padding: 4px 8px 5px 8px;
-  position: absolute;
-  top: -23px;
-  left: -21px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
-  line-height: 1em;
-  text-align: center;
-  background: #50585D;
-  border-radius: 20px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.3s ease, top 0.3s ease; }
-
-/* The little chiclet arrow under the tooltip, pointing down */
-.tooltip:after {
-  content: "";
-  border-width: 5px 5px 0 5px;
-  border-style: solid;
-  border-color: #50585D transparent;
-  display: block;
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  margin-left: -5px;
-  z-index: 220;
-  width: 0; }
-
-/* On hover, show the tooltip! */
-.subscribe:hover .tooltip {
-  opacity: 1;
-  top: -33px; }
-
+/* 641px, 1024px */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .post {
+    margin: 0 0 1em 0; } }
 /* 0, 640px */
 @media only screen and (max-width: 40em) {
+  p, dl, ol, ul {
+    font-size: 1.5rem;
+    line-height: 1.55; }
+
   .post {
     margin: 0 0 10px 0;
     padding: 3rem;
     border-radius: 0;
     border-bottom: 0; }
 
-  h1.post-title, h2.post-title, .blog-title {
-    font-size: 3rem; } }
-/* 641px, 1024px */
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .post {
-    margin: 0 0 1em 0; } }
+  h1.post-title, h2.post-title {
+    font-size: 2.5rem; }
+
+  .blog-title {
+    font-size: 3rem; }
+
+  .footer-jump {
+    display: none; } }

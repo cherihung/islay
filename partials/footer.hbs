@@ -1,10 +1,10 @@
     <footer>
-        <div class="row">
-        <a name="author"></a>
+        <div class="row" id="author">
+            <div class="blog-logo"><a class="logo" href="{{@blog.url}}"></a></div>
         {{> author}}
         </div>
         <div class="row">
              <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
+             <section class="poweredby">Proudly published with <a class="icon icon-ghost" href="https://ghost.org">Ghost</a></section>
         </div>
     </footer>

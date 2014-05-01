@@ -1,8 +1,9 @@
 <nav role="navigation" class="site-pagination">
 <ul class="pagination">
-    {{#if next}}
+    {{#if next}} 
         	<li class="arrow"><a href="{{page_url next}}">&raquo;</a></li>
     {{/if}}
+    <li class="pages">{{page}} / {{pages}}</li>
     {{#if prev}}
     		<li class="arrow"><a href="{{page_url prev}}">&laquo;</a>
     {{/if}}
