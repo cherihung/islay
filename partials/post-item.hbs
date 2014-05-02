@@ -1,7 +1,9 @@
 <header class="post-header">
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-        </header>
-        {{> post-meta}}
-        <section class="post-excerpt">
-            <p>{{!excerpt words="80"}}{{content}}</p>
-        </section>
+            <h2 class="post-title"><a href="{{url}}" title="{{{title}}}">{{{title}}}</a></h2>
+</header>
+{{> post-meta}}
+<section class="post-excerpt">
+       <p>{{!excerpt words="80"}}{{content words="100"}}
+          <a href="{{url}}" class="continue">READ ON &#8594;</a>		
+       </p>
+</section>

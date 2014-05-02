@@ -22,17 +22,17 @@
 <body class="{{body_class}}" id="body">
     
     <div class="site-wrapper">
-     <div class="large-4 large-push-7 small-12 columns site-head">
-         {{> sidebar}}
-     </div>
-     <div class="large-6 large-pull-5 small-12 columns site-content">
-           {{{body}}}
-      </div>
+         <div class="small-12 columns site-head">
+             {{> sidebar}}
+         </div>
+         <div class="large-8 large-pull-4 columns site-content">
+               {{{body}}}
+          </div>
     </div>
     <div class="site-footer columns large-12">
             {{> footer}}
     </div>
-    <div class="footer-jump" style="display:none"><a class="icon icon-arrow-up" href="#body"></a></div>
+    <div class="footer-jump" style="display:none"><a class="button-arrow-up" href="#body">&#9650;</a></div>
     {{ghost_foot}}
     {{! The main JavaScript file for Islay }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>

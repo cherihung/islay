@@ -873,7 +873,7 @@ select {
   .large-7 {
     width: 58.33333%; }
 
-  .large-8 {
+  .large-8, .post {
     width: 66.66667%; }
 
   .large-9 {
@@ -1702,11 +1702,11 @@ ul.pagination {
   ul.pagination li {
     height: inherit;
     color: #999999;
-    font-size: 1.75rem;
+    font-size: 1.375rem;
     margin-left: 0.3125rem; }
     ul.pagination li a {
       display: block;
-      padding: 0.03125rem 1.25rem 0.03125rem 1.25rem;
+      padding: 0.03125rem 0.9375rem 0.03125rem 0.9375rem;
       color: #999999;
       border-radius: 3px; }
     ul.pagination li:hover a,
@@ -3559,7 +3559,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(to right, #c6f28b 10%, #c6f28b 18%, #f2f08b 18%, #f2f08b 29%, #93f28b 29%, #93f28b 34%, #8ff28b 34%, #8ff28b 55%, #d4f28b 55%, #d4f28b 73%, #c9f28b 73%, #c9f28b 85%, #bdf28b 85%, #bdf28b 100%); }
+    background-image: linear-gradient(to right, #f2d28b 10%, #f2d28b 18%, #8bf29c 18%, #8bf29c 29%, #bcf28b 29%, #bcf28b 34%, #a7f28b 34%, #a7f28b 55%, #a7f28b 55%, #a7f28b 73%, #cdf28b 73%, #cdf28b 85%, #98f28b 85%, #98f28b 100%); }
 
 a {
   color: #0f0f0f;
@@ -3744,6 +3744,33 @@ hr {
   display: inline-block;
   position: absolute; }
 
+.button-arrow-up {
+  border-style: solid;
+  border-width: 0px;
+  cursor: pointer;
+  font-family: "Roboto", Helvetica, arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 0.875rem;
+  padding-right: 1.75rem;
+  padding-bottom: 0.9375rem;
+  padding-left: 1.75rem;
+  font-size: 0.8125rem;
+  background-color: #666666;
+  border-color: #525252;
+  color: white; }
+  .button-arrow-up:hover, .button-arrow-up:focus {
+    background-color: #525252; }
+  .button-arrow-up:hover, .button-arrow-up:focus {
+    color: white; }
+
 /* ==========================================================================
    4. General - The main styles for the the theme
 ========================================================================== */
@@ -3755,7 +3782,8 @@ hr {
   text-align: center; }
 .site-head .blog-title, .site-head .blog-description {
   color: #e7e7e7;
-  line-height: 1.65em; }
+  line-height: 1.65em;
+  text-align: center; }
 .site-head a:hover {
   color: #f2a026; }
 
@@ -3772,7 +3800,7 @@ hr {
 .social-icons {
   text-align: center;
   font-size: 1.5em;
-  margin: 0 0 0.5em 0; }
+  margin: 1.3em 0 0 0; }
   .social-icons a {
     display: inline-block;
     margin: 0 0.2em; }
@@ -3782,26 +3810,33 @@ hr {
 .site-content, .site-wrapper {
   min-height: 99%; }
 
+.site-content {
+  margin-top: 0.8rem;
+  background: #fcfcfc; }
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
   margin: 4rem auto;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
   word-break: break-word;
   hyphens: auto;
-  background: #fcfcfc;
-  border-bottom: 10px solid #e7e7e7; }
+  border-radius: 0.3em; }
 
 h1.post-title, h2.post-title {
   margin: 0;
-  font-size: 3.4rem; }
+  font-size: 4rem; }
 
 .post-content a {
   text-decoration: underline; }
 
-.post-excerpt a {
-  text-decoration: underline; }
 .post-excerpt p {
   margin: 1.6rem 0 0 0; }
+.post-excerpt .continue {
+  border-bottom: 1px dashed #e7e7e7;
+  font-size: 0.5em;
+  display: inline-block;
+  text-align: right;
+  width: 100%; }
 
 .post-meta {
   display: inline-block;
@@ -3850,16 +3885,19 @@ h1.post-title, h2.post-title {
 
 .footer-jump {
   position: fixed;
-  font-size: 1.5em;
-  z-index: 99;
+  z-index: 999;
   bottom: 5%;
-  left: 2%; }
+  right: 2%; }
   .footer-jump a {
-    color: #e7e7e7;
-    opacity: 0.4; }
+    color: #0f0f0f;
+    opacity: 0.4;
+    border-radius: 0.2em;
+    font-size: 1rem; }
     .footer-jump a:hover {
-      color: #fcfcfc;
       opacity: 1; }
+
+div#at4-share {
+  z-index: 997; }
 
 /* ==========================================================================
    6. Tag archive
@@ -3870,7 +3908,7 @@ h1.post-title, h2.post-title {
   margin: 4rem auto;
   text-transform: uppercase; }
   .tag-archive-header h3 {
-    color: #fff; }
+    color: #353535; }
 
 /* ==========================================================================
    7. Third Party Elements - Embeds from other services
@@ -3887,6 +3925,9 @@ h1.post-title, h2.post-title {
 /* ==========================================================================
    8. Pagination - Tools to let you flick between pages
    ========================================================================== */
+.site-pagination {
+  margin-right: 1rem; }
+
 ul.pagination li {
   transition: background-color 0.2s ease; }
   ul.pagination li a:hover {
@@ -3900,7 +3941,9 @@ ul.pagination li {
 .site-footer {
   background: #111111;
   min-height: 250px;
-  max-width: 100%; }
+  max-width: 100%;
+  z-index: 998;
+  padding-top: 1em; }
   .site-footer footer {
     margin: 0;
     font-size: 1.3rem;
@@ -3915,7 +3958,7 @@ ul.pagination li {
       top: 0;
       left: 0;
       right: 0;
-      background-image: linear-gradient(to right, #ecf28b 10%, #ecf28b 18%, #f2d28b 18%, #f2d28b 29%, #8bf28c 29%, #8bf28c 34%, #bcf28b 34%, #bcf28b 55%, #c1f28b 55%, #c1f28b 73%, #d9f28b 73%, #d9f28b 85%, #aef28b 85%, #aef28b 100%); }
+      background-image: linear-gradient(to right, #acf28b 10%, #acf28b 18%, #f2e78b 18%, #f2e78b 29%, #f2db8b 29%, #f2db8b 34%, #d2f28b 34%, #d2f28b 55%, #8bf291 55%, #8bf291 73%, #f2db8b 73%, #f2db8b 85%, #acf28b 85%, #acf28b 100%); }
 
 .site-footer a {
   color: #f8ca86; }
@@ -3932,8 +3975,11 @@ ul.pagination li {
     font-size: 1rem;
     margin-right: 0.2em; }
 
-.blog-logo {
+.disclaimer {
   text-align: center;
+  margin-top: 4em; }
+
+.blog-logo {
   margin: 1em 0; }
   .blog-logo .logo {
     display: inline-block;

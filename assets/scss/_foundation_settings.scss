@@ -779,11 +779,11 @@ $pagination-height: rem-calc(54);
 $pagination-li-float: right;
 $pagination-li-height: inherit;
 $pagination-li-font-color: #999;
-$pagination-li-font-size: rem-calc(28);
+$pagination-li-font-size: rem-calc(22);
 // $pagination-li-margin: rem-calc(5);
 
 // We use these for the pagination anchor links
-$pagination-link-pad: rem-calc(0.5 20 0.5 20);
+$pagination-link-pad: rem-calc(0.5 15 0.5 15);
 // $pagination-link-font-color: #999;
 // $pagination-link-active-bg: scale-color(#fff, $lightness: -10%);
  $pagination-link-active-bg: $link-hover-color;

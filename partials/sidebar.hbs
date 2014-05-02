@@ -1,6 +1,7 @@
 <header class="site-head-content">
-		<div class="desktop large-4">
+		<div class="desktop large-4 large-push-8">
             <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <h4 class="blog-description">{{@blog.description}} by <a href="#author">Chienyi Cheri Hung</a></h4>
             <div class="social-icons">
                 <a href="" class="icon icon-twitter"><span class="tooltip">I tweet.</span></a>
                 <a href="" class="icon icon-googleplus"><span class="tooltip">Google is taking over the world. Of course I'm on there.</span></a>
@@ -8,7 +9,6 @@
                 <a href="" class="icon icon-linkedin"><span class="tooltip">LinkedIn, um.</span></a>
                 <a href="{{@blog.url}}/rss/" class="icon icon-feed"><span class="tooltip">RSS anyone?</span></a>
             </div>
-            <h4 class="blog-description">{{@blog.description}} by <a href="#author">Chienyi Cheri Hung</a></h4>
         </div>
         <div class="mobi">
                 {{#if @blog.logo}}
@@ -18,6 +18,12 @@
                 {{/if}}
             <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a> </h1>
             <h4 class="blog-description">{{@blog.description}}</h4>
-             <!--<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a> blog-logo-->
+             <div class="social-icons">
+                <a href="" class="icon icon-twitter"><span class="tooltip">I tweet.</span></a>
+                <a href="" class="icon icon-googleplus"><span class="tooltip">Google is taking over the world. Of course I'm on there.</span></a>
+                <a href="" class="icon icon-github"><span class="tooltip">I have stuff on Github</span></a>
+                <a href="" class="icon icon-linkedin"><span class="tooltip">LinkedIn, um.</span></a>
+                <a href="{{@blog.url}}/rss/" class="icon icon-feed"><span class="tooltip">RSS anyone?</span></a>
+            </div>
         </div>
 </header>

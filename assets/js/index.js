@@ -9,21 +9,24 @@
     "use strict";
 
     $(document).ready(function(){
-
-        
+      //extend .site-content to window size if it is less than window height
+      var mainObj = $('.site-content');
+      var mainObj_height = mainObj.height();
+      if(mainObj_height < $(window).height()) {
+        mainObj.css('height',$(window).height())
+      }
     });
     $(window).load(function() {
-
       $(window).scroll( function(){
-        var top_of_window = $(window).scrollTop();
         //toggle the up arrow anchor for jumping back to top of page
+        var top_of_window = $(window).scrollTop();
         var anchor = $('.footer-jump');
            if(top_of_window > 0) {
               $(anchor).show('fast');
             } else {
               $(anchor).hide('fast');
             }
-        }); 
+      }); 
    });
   
 
