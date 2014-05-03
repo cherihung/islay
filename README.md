@@ -1,6 +1,8 @@
-## Islay: A Ghost blog theme  
+## Islay: A Ghost blog theme with Foundation 5
 
-#### Theme uses Foundation 5 framework. Compiled using Mixture.
+#### Theme uses F5 framework. Compiled using Mixture.
+
+Currently used on my own blog www.cyh.io
 
 #### Completed Features:
 
