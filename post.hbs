@@ -18,7 +18,7 @@
 
             <footer class="post-footer">
                 <section class="post-meta">
-                        TAGS: <span class="label secondary tag">{{tags}}</span>
+                        This post is about: <span class="label-tag secondary">{{tags}}</span>
                 </section>
             </footer>
 
@@ -27,9 +27,9 @@
     </article>
 
     <aside class="comments">
-        {{!>disqus-thread}}
+        {{>disqus-thread}}
     </aside>
-
+    
 </main>
 
 {{>addthis}}
