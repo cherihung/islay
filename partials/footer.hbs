@@ -1,6 +1,17 @@
     <footer>
-        <div class="row author">
-            {{> author}}
+        <div class="row author" id="author">
+            <!-- a workaround to display author info saved in settings outside of the regular post loop -->
+            {{#if post}}
+                {{#post}}
+                    {{> author}}
+                {{/post}}
+            {{else}}
+                {{#foreach posts}}
+                    {{#if @first}}
+                        {{> author}}
+                    {{/if}}
+                {{/foreach}}
+            {{/if}}
         </div>
         <div class="row disclaimer">
              <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>

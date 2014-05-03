@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link rel="shortcut icon" href="{{asset "images/favicon.png"}}">
     <link rel="author" href="https://plus.google.com/u/0/+ChienyiCheriHung/posts"/>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,500,500italic' rel='stylesheet' type='text/css'>
@@ -20,19 +20,25 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}}" id="body">
-    
-    <div class="site-wrapper">
-         <div class="small-12 columns site-head">
-             {{> sidebar}}
-         </div>
-         <div class="large-8 large-pull-4 columns site-content">
-               {{{body}}}
-          </div>
-    </div>
-    <div class="site-footer columns large-12">
-            {{> footer}}
-    </div>
-    <div class="footer-jump" style="display:none"><a class="button-arrow-up" href="#body">&#9650;</a></div>
+    <div class="off-canvas-wrap" data-offcanvas>
+        <div class="inner-wrap">
+            {{> offcanvas-menu }}
+            <div class="site-wrapper">
+                 <div class="small-12 columns site-head">
+                     {{> sidebar}}
+                 </div>
+                 <div class="large-8 large-pull-4 columns site-content">
+                       {{{body}}}
+                  </div>
+            </div><!--end site-wrapper-->
+            <div class="site-footer columns large-12">
+                    {{> footer}}
+            </div><!--end site-footer -->
+            <div class="footer-jump" style="display:none"><a class="button-arrow-up" href="#body">&#9650;</a></div>
+            <!-- close the off-canvas menu -->
+            <a class="exit-off-canvas"></a>
+        </div><!--end inner-wrap-->
+    </div><!--end off-canvas-wrap -->
     {{ghost_foot}}
     {{! The main JavaScript file for Islay }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>

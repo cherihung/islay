@@ -30,7 +30,10 @@
     "optimiseImages": true,
     "password": null,
     "ignoreDir": "ignore",
-    "customTodos": null,
+    "customTodos": [{
+        "fileTypes": "hbs",
+        "regex": "(?<={{! TODO:).*?(?=}})"
+        }],
     "ftpSettings": null,
     "autoPrefixer": null,
     "sass": null,

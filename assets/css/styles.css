@@ -873,7 +873,7 @@ select {
   .large-7 {
     width: 58.33333%; }
 
-  .large-8, .post {
+  .large-8, .post, #disqus_thread {
     width: 66.66667%; }
 
   .large-9 {
@@ -1711,7 +1711,7 @@ ul.pagination {
       border-radius: 3px; }
     ul.pagination li:hover a,
     ul.pagination li a:focus {
-      background: #f2a026; }
+      background: #fc942d; }
     ul.pagination li.unavailable a {
       cursor: default;
       color: #999999; }
@@ -1936,7 +1936,7 @@ p {
   font-family: inherit;
   font-weight: normal;
   font-size: 1.5rem;
-  line-height: 1.55;
+  line-height: 1.65em;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
@@ -2019,7 +2019,7 @@ ul,
 ol,
 dl {
   font-size: 1.5rem;
-  line-height: 1.55;
+  line-height: 1.65em;
   margin-bottom: 1.25rem;
   list-style-position: inside;
   font-family: inherit; }
@@ -2097,7 +2097,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  line-height: 1.55;
+  line-height: 1.65em;
   color: #6f6f6f; }
 
 /* Microformats */
@@ -3559,13 +3559,13 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(to right, #f2d28b 10%, #f2d28b 18%, #8bf29c 18%, #8bf29c 29%, #bcf28b 29%, #bcf28b 34%, #a7f28b 34%, #a7f28b 55%, #a7f28b 55%, #a7f28b 73%, #cdf28b 73%, #cdf28b 85%, #98f28b 85%, #98f28b 100%); }
+    background-image: linear-gradient(to right, #d7f28b 10%, #d7f28b 18%, #c6f28b 18%, #c6f28b 29%, #dcf28b 29%, #dcf28b 34%, #f2cc8b 34%, #f2cc8b 55%, #f2c88b 55%, #f2c88b 73%, #a0f28b 73%, #a0f28b 85%, #8bf293 85%, #8bf293 100%); }
 
 a {
   color: #0f0f0f;
   transition: color ease 0.2s; }
   a:hover {
-    color: #f2a026;
+    color: #fc942d;
     text-decoration: none; }
 
 mark {
@@ -3707,6 +3707,9 @@ hr {
 .inline {
   display: inline; }
 
+.off-canvas-wrap, .inner-wrap {
+  -webkit-backface-visibility: visible; }
+
 /*
  * image reaplcement helper class, adpated from h5bp.com/u
  */
@@ -3730,13 +3733,14 @@ hr {
   padding: 4px 8px 5px 8px;
   text-align: left;
   color: #0f0f0f;
-  font-size: 1.5rem;
   line-height: 1.1em;
-  background: #f0950e;
+  background: #fc8714;
   border-radius: 10px;
-  transition: opacity 0.3s ease, top 0.3s ease;
-  max-width: 120px;
-  margin: 3em 0 0 -3em; }
+  transition: opacity 0.3s ease, top 0.3s ease; }
+  .tooltip.below {
+    margin: 2.5em 0 0 -3em; }
+  .tooltip.above {
+    margin: -2.5em 0 0 -3em; }
 
 /* On hover, show the tooltip! */
 .icon:hover .tooltip {
@@ -3774,6 +3778,38 @@ hr {
 /* ==========================================================================
    4. General - The main styles for the the theme
 ========================================================================== */
+.blog-logo .logo {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 60px;
+  background: url("../images/logo.svg") no-repeat top left;
+  background-size: 500px 100px;
+  background-position: 0 -20px; }
+
+.social-icons {
+  text-align: center;
+  margin: 1.3em 0 0 0;
+  font-size: 1.5em; }
+  .social-icons .tooltip {
+    font-size: 1.2rem; }
+  .social-icons a {
+    display: inline-block;
+    list-style: none;
+    margin: 0 0.2em; }
+    .social-icons a.icon:last-child .tooltip {
+      margin-left: -5.5em; }
+    .social-icons a.icon:first-child .tooltip {
+      margin-left: -2em; }
+
+.author-image {
+  margin-right: 1rem;
+  border: 1px solid #666666;
+  border-radius: 0.3em; }
+  .author-image img {
+    width: 90px;
+    height: auto; }
+
 .site-head h1, .site-head h4 {
   margin: 0; }
 .site-head a {
@@ -3784,8 +3820,13 @@ hr {
   color: #e7e7e7;
   line-height: 1.65em;
   text-align: center; }
+.site-head .blog-description a {
+  border-bottom: 1px dotted #e7e7e7; }
 .site-head a:hover {
-  color: #f2a026; }
+  color: #fc942d; }
+.site-head .blog-logo {
+  text-align: center;
+  margin: 1em 0; }
 
 .site-head-content .desktop {
   position: fixed;
@@ -3797,16 +3838,6 @@ hr {
   padding: 1em;
   text-align: center; }
 
-.social-icons {
-  text-align: center;
-  font-size: 1.5em;
-  margin: 1.3em 0 0 0; }
-  .social-icons a {
-    display: inline-block;
-    margin: 0 0.2em; }
-  .social-icons .icon:last-child .tooltip {
-    margin-left: -5.5em; }
-
 .site-content, .site-wrapper {
   min-height: 99%; }
 
@@ -3815,12 +3846,11 @@ hr {
   background: #fcfcfc; }
 
 /* Every post, on every page, gets this style on its <article> tag */
-.post {
+.post, #disqus_thread {
   margin: 4rem auto;
   padding: 1rem 3rem;
   word-break: break-word;
-  hyphens: auto;
-  border-radius: 0.3em; }
+  hyphens: auto; }
 
 h1.post-title, h2.post-title {
   margin: 0;
@@ -3845,41 +3875,40 @@ h1.post-title, h2.post-title {
   color: #666666; }
 
 .post-footer {
-  margin-top: 1.8rem;
-  text-align: center; }
+  margin-top: 1.8rem; }
 
-.publish-meta {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4.3rem 0 4rem 0;
-  text-align: right; }
+.comments {
+  border-top: 1px solid #e7e7e7;
+  margin-top: 4em; }
 
-.publish-heading {
-  display: block;
-  font-weight: bold; }
-
-.publish-date {
-  display: block;
-  font-size: 1.4rem;
-  line-height: 1.5em; }
-
-.label.tag {
+.label-tag {
+  font-weight: normal;
+  font-family: "Roboto", Helvetica, arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
   display: inline-block;
-  font-size: 1rem;
+  position: relative;
+  margin-bottom: inherit;
   padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #e7e7e7;
+  color: #333333;
+  border-radius: 0px;
+  display: inline-block;
   text-transform: uppercase;
   text-align: center;
   margin-left: 0.5rem;
   transition: background-color 0.2s ease; }
-  .label.tag a, .label.tag a:visited {
-    color: #fcfcfc;
+  .label-tag a, .label-tag a:visited {
+    color: #424242;
     font-weight: bold; }
-  .label.tag:hover {
-    background-color: #f2a026; }
-    .label.tag:hover a {
+  .label-tag:hover {
+    background-color: #fc942d; }
+    .label-tag:hover a {
       color: #fcfcfc; }
-  .label.tag a:hover {
+  .label-tag a:hover {
     color: #fcfcfc;
     text-decoration: none; }
 
@@ -3898,6 +3927,21 @@ h1.post-title, h2.post-title {
 
 div#at4-share {
   z-index: 997; }
+
+.tab-bar {
+  height: 3rem;
+  line-height: 3rem; }
+
+.right-small {
+  border-left: none; }
+
+ul.off-canvas-list {
+  text-align: center; }
+  ul.off-canvas-list li {
+    font-size: 1.3rem; }
+    ul.off-canvas-list li label {
+      background: none;
+      color: #fcfcfc; }
 
 /* ==========================================================================
    6. Tag archive
@@ -3958,13 +4002,13 @@ ul.pagination li {
       top: 0;
       left: 0;
       right: 0;
-      background-image: linear-gradient(to right, #acf28b 10%, #acf28b 18%, #f2e78b 18%, #f2e78b 29%, #f2db8b 29%, #f2db8b 34%, #d2f28b 34%, #d2f28b 55%, #8bf291 55%, #8bf291 73%, #f2db8b 73%, #f2db8b 85%, #acf28b 85%, #acf28b 100%); }
+      background-image: linear-gradient(to right, #f2e28b 10%, #f2e28b 18%, #a7f28b 18%, #a7f28b 29%, #f2d68b 29%, #f2d68b 34%, #e8f28b 34%, #e8f28b 55%, #a0f28b 55%, #a0f28b 73%, #f2d68b 73%, #f2d68b 85%, #f2d18b 85%, #f2d18b 100%); }
 
 .site-footer a {
-  color: #f8ca86; }
+  color: #fdc792; }
 
 .site-footer a:hover {
-  color: #f2a026; }
+  color: #fc942d; }
 
 .poweredby .icon-ghost {
   font-weight: 700;
@@ -3978,17 +4022,6 @@ ul.pagination li {
 .disclaimer {
   text-align: center;
   margin-top: 4em; }
-
-.blog-logo {
-  margin: 1em 0; }
-  .blog-logo .logo {
-    display: inline-block;
-    text-indent: -9999px;
-    width: 100px;
-    height: 60px;
-    background: url("../images/logo.svg") no-repeat top left;
-    background-size: 500px 100px;
-    background-position: 0 -20px; }
 
 /* 641px, 1024px */
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {

@@ -37,11 +37,11 @@
 
 @font-face {
   font-family: "cyhghost";
-  src:url("../fonts/cyhghost.eot");
-  src:url("../fonts/cyhghost.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/cyhghost.woff") format("woff"),
-    url("../fonts/cyhghost.ttf") format("truetype"),
-    url("../fonts/cyhghost.svg#cyhghost") format("svg");
+  src:url("#{$icon-font-location}cyhghost.eot");
+  src:url("#{$icon-font-location}cyhghost.eot?#iefix") format("embedded-opentype"),
+    url("#{$icon-font-location}cyhghost.woff") format("woff"),
+    url("#{$icon-font-location}cyhghost.ttf") format("truetype"),
+    url("#{$icon-font-location}cyhghost.svg#cyhghost") format("svg");
   font-weight: normal;
   font-style: normal;
 
@@ -85,8 +85,6 @@
   content: "h";
 }
 
-
-
 /* ==========================================================================
    2. General - Setting up some base styles
    ========================================================================== */
@@ -115,7 +113,6 @@ body {
     }
 
 }
-
 
 a {
     color: $link-color;
@@ -195,7 +192,6 @@ hr {
     margin: 3.2em 0;
     padding: 0;
 }
-
 
 ::-moz-selection {
     color: #222;
@@ -293,6 +289,11 @@ float:left;
   display: inline;
 }
 
+//reset Foundation default. otherwise, the icon fonts appear to be jagged
+.off-canvas-wrap, .inner-wrap {
+        -webkit-backface-visibility: visible;
+}
+
 
 /*
  * image reaplcement helper class, adpated from h5bp.com/u
@@ -325,14 +326,20 @@ float:left;
     padding: 4px 8px 5px 8px;
     text-align: left;
     color: $black;
-    font-size: 1.5rem;
     line-height: 1.1em;
     background: darken($link-hover-color,5%);
     border-radius:10px;
     transition: opacity 0.3s ease, top 0.3s ease;
-    max-width: 120px;
-    margin: 3em 0 0 -3em;
-}
+    //max-width: 150px;
+
+    //position of the tooltip, below component
+    &.below {
+        margin: 2.5em 0 0 -3em;
+    }
+    &.above {
+        margin: -2.5em 0 0 -3em;   
+    }
+} //.tooltip
 
 /* On hover, show the tooltip! */
 .icon:hover .tooltip {
@@ -350,6 +357,53 @@ float:left;
    4. General - The main styles for the the theme
 ========================================================================== */
 
+.blog-logo {
+
+    .logo {
+        display: inline-block;
+        text-indent: -9999px;
+        width: 100px;
+        height: 60px;
+        background: url('../images/logo.svg') no-repeat top left;
+        background-size: 500px 100px;
+        background-position: 0 -20px;   
+    }
+}
+.social-icons {
+      text-align: center;
+      margin: 1.3em 0 0 0;
+       font-size: 1.5em; 
+
+    .tooltip {
+        font-size: 1.2rem;
+    }
+    a {
+       display: inline-block;
+       list-style: none;
+       margin: 0 0.2em;
+
+        &.icon:last-child .tooltip {
+            margin-left: -5.5em;
+        }
+        &.icon:first-child .tooltip {
+            margin-left: -2em;
+        }
+    } //a
+            
+} //social-icons
+
+.author-image {
+
+    margin-right: 1rem;
+    border: 1px solid $gray;
+    border-radius: 0.3em;
+
+    img {
+        width: 90px;
+        height: auto;
+    }
+}
+
 .site-head {    
 
     h1, h4 {
@@ -365,9 +419,16 @@ float:left;
          color: $lightGray;   
          line-height: 1.65em;     
          text-align: center;
-    } //.blog-title, .blog-description
+    }
+    .blog-description a {
+        border-bottom: 1px dotted $lightGray;
+    }
     a:hover {
             color: $link-hover-color;
+    }
+    .blog-logo {
+        text-align: center;
+        margin: 1em 0;
     }
 } //.site-head
 
@@ -379,7 +440,8 @@ float:left;
         //background: linear-gradient(to bottom, rgba(red($black),green($black),blue($black),0.8) 0%, rgba(red($black),green($black),blue($black),0.8) 100%);
         padding: 0 4em;
         max-height: 20rem;
-    }
+    
+    } //desktop
 
     .mobi {
         //background: linear-gradient(to bottom, rgba(red($black),green($black),blue($black),0.6) 0%, rgba(red($black),green($black),blue($black),0.6) 100%);
@@ -388,22 +450,6 @@ float:left;
         text-align: center;
     }
 } //.site-head-content
-
-.social-icons {
-    text-align: center;
-    font-size: 1.5em;
-    margin: 1.3em 0 0 0;
-
-    a {
-        display: inline-block;
-        margin: 0 0.2em;
-    }
-
-    .icon:last-child .tooltip {
-        margin-left: -5.5em;
-    }
-    
-}
 
 .site-content, .site-wrapper {
     min-height: 99%;   
@@ -416,12 +462,11 @@ float:left;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
-.post {
+.post, #disqus_thread {
     margin: 4rem auto;
     padding: 1rem 3rem;
     word-break: break-word;
     hyphens: auto;
-    border-radius: 0.3em;
     @extend .large-8;
 }
 
@@ -460,39 +505,24 @@ h1.post-title, h2.post-title {
 }
 .post-footer {
     margin-top: 1.8rem;
-    text-align: center;
 }
 
-.publish-meta {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 4.3rem 0 4rem 0;
-    text-align: right
+.comments {
+    border-top: 1px solid $lightGray;
+    margin-top: 3em;
 }
+.label-tag {
 
-.publish-heading {
-    display: block;
-    font-weight: bold;
-}
+    @include label($padding: 0.5rem, $text-size:1rem, $bg: $lightGray, $radius: 0px);
 
-.publish-date {
-    display: block;
-    font-size: 1.4rem;
-    line-height: 1.5em;
-}
-
-.label.tag {
     display: inline-block;
-    font-size: 1rem;
-    padding: 0.5rem;
     text-transform: uppercase;
     text-align: center;
     margin-left: 0.5rem;
     transition: background-color 0.2s ease;
 
     a, a:visited {
-        color: $white;
+        color: $mildGray;
         font-weight: bold;
 
     }
@@ -509,7 +539,7 @@ h1.post-title, h2.post-title {
         text-decoration: none;
     }
 
-} //.label.tag
+} //.label-tag
 
 .footer-jump {
     position: fixed;
@@ -528,10 +558,29 @@ h1.post-title, h2.post-title {
         }
     }
 }
-
+//to hide AddThis smartlayer behind the footer
 div#at4-share {
     z-index: 997;
 }
+
+.tab-bar {
+    height: 3rem;
+    line-height: 3rem;
+}
+.right-small {
+    border-left: none;
+}
+
+ul.off-canvas-list {
+    text-align: center;
+    li {
+        font-size: 1.3rem;
+        label {
+            background: none;
+            color: $white;
+        }
+    }
+} //ul.off-canvas-list
     
 
 /* ==========================================================================
@@ -649,21 +698,6 @@ ul.pagination {
     margin-top: 4em;
 }
 
-.blog-logo {
-
-    margin: 1em 0;
-
-    .logo {
-        display: inline-block;
-        text-indent: -9999px;
-        width: 100px;
-        height: 60px;
-        background: url('../images/logo.svg') no-repeat top left;
-        background-size: 500px 100px;
-        background-position: 0 -20px;   
-    }
-
-}
 
 //media queries
 
