@@ -2,7 +2,7 @@
 
 #### Theme uses F5 framework. Compiled using Mixture.
 
-Currently used on my own blog www.cyh.io
+See it at work on my blog www.cyh.io
 
 #### Completed Features:
 
@@ -16,6 +16,7 @@ Currently used on my own blog www.cyh.io
 * Author info displayed outside of main loop
 * Offcanvas menu for social links on mobile
 * Disqus comment on each post
+* Google Analytics
 
 #### TODOs:
 
@@ -47,6 +48,7 @@ Currently used on my own blog www.cyh.io
 * sidebar : column to display blog title, blog description and social links
 * disqus-thread : my Disqus comment embed code
 * offcanvas-menu : offcanvas menu containing social links
+* ga-tracking : my Google Analytics tracking code snippet
 
 Theme author: Chienyi Cheri Hung @cyhung
 
