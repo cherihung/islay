@@ -1,8 +1,7 @@
 /**
  * Main JS file for Islay theme
- * Version: 0.0.1
  * Author: Chienyi Cheri Hung @cyhung
- */
+ **/
 
 /*globals jQuery, document */
 (function ($) {
