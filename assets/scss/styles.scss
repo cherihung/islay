@@ -414,15 +414,17 @@ float:left;
     }
     h1 {
         text-align: center;
+        line-height: 1.2em;
     }
-    .blog-title, .blog-description {
-         color: $lightGray;   
-         line-height: 1.65em;     
-         text-align: center;
-    }
-    .blog-description a {
-        border-bottom: 1px dotted $lightGray;
-    }
+    .blog-description {
+        line-height: 1.6em; 
+        color: $lightGray;   
+        text-align: center;
+        margin-top: 0.8em;
+        a {
+            border-bottom: 1px dotted $lightGray;
+        }
+    } //blog-description
     a:hover {
             color: $link-hover-color;
     }

@@ -17,6 +17,7 @@ See it at work on my blog www.cyh.io
 * Offcanvas menu for social links on mobile
 * Disqus comment on each post
 * Google Analytics
+* Google Font
 
 #### TODOs:
 
@@ -52,7 +53,7 @@ See it at work on my blog www.cyh.io
 
 Theme author: Chienyi Cheri Hung @cyhung
 
-Version: 1.0.0
+Version: 0.1.0
 
 MIT License. See LICENSE for details.
 
