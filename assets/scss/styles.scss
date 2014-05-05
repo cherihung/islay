@@ -417,7 +417,7 @@ float:left;
     }
     h1 {
         text-align: center;
-        line-height: 1.2em;
+        line-height: 1.1em;
     }
     .blog-description {
         line-height: 1.6em; 
@@ -434,6 +434,9 @@ float:left;
     .blog-logo {
         text-align: center;
         margin: 1em 0;
+    }
+    .blog-title {
+        font-size: 3rem;
     }
 } //.site-head
 
@@ -489,13 +492,11 @@ h1.post-title, h2.post-title {
 
 .post-excerpt {
 
-    p {
-        margin: 1.6rem 0 0 0;
-    }
+        margin-top: 1.6rem;
 
     .continue {
         border-bottom: 1px dashed $lightGray;
-        font-size: 0.5em;
+        font-size: 1.1rem;
         display: inline-block;
         text-align: right;
         width: 100%;
@@ -728,9 +729,6 @@ ul.pagination {
 
     h1.post-title, h2.post-title {  
         font-size: 2.5rem;
-    }
-    .blog-title {
-        font-size: 3rem;
     }
     .footer-jump {
         display: none;

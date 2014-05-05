@@ -3559,7 +3559,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(to right, #8bf29f 10%, #8bf29f 18%, #d4f28b 18%, #d4f28b 29%, #98f28b 29%, #98f28b 34%, #b0f28b 34%, #b0f28b 55%, #e1f28b 55%, #e1f28b 73%, #8bf29f 73%, #8bf29f 85%, #8bf29a 85%, #8bf29a 100%); }
+    background-image: linear-gradient(to right, #baf28b 10%, #baf28b 18%, #8bf28e 18%, #8bf28e 29%, #d5f28b 29%, #d5f28b 34%, #f2f08b 34%, #f2f08b 55%, #f2e48b 55%, #f2e48b 73%, #f2c58b 73%, #f2c58b 85%, #f2d88b 85%, #f2d88b 100%); }
 
 a {
   color: #0f0f0f;
@@ -3816,7 +3816,7 @@ hr {
   color: #e7e7e7; }
 .site-head h1 {
   text-align: center;
-  line-height: 1.2em; }
+  line-height: 1.1em; }
 .site-head .blog-description {
   line-height: 1.6em;
   color: #e7e7e7;
@@ -3829,6 +3829,8 @@ hr {
 .site-head .blog-logo {
   text-align: center;
   margin: 1em 0; }
+.site-head .blog-title {
+  font-size: 3rem; }
 
 .site-head-content .desktop {
   position: fixed;
@@ -3861,14 +3863,14 @@ h1.post-title, h2.post-title {
 .post-content a {
   text-decoration: underline; }
 
-.post-excerpt p {
-  margin: 1.6rem 0 0 0; }
-.post-excerpt .continue {
-  border-bottom: 1px dashed #e7e7e7;
-  font-size: 0.5em;
-  display: inline-block;
-  text-align: right;
-  width: 100%; }
+.post-excerpt {
+  margin-top: 1.6rem; }
+  .post-excerpt .continue {
+    border-bottom: 1px dashed #e7e7e7;
+    font-size: 1.1rem;
+    display: inline-block;
+    text-align: right;
+    width: 100%; }
 
 .post-meta {
   display: inline-block;
@@ -4004,7 +4006,7 @@ ul.pagination li {
       top: 0;
       left: 0;
       right: 0;
-      background-image: linear-gradient(to right, #eef28b 10%, #eef28b 18%, #d5f28b 18%, #d5f28b 29%, #d9f28b 29%, #d9f28b 34%, #bff28b 34%, #bff28b 55%, #8bf29a 55%, #8bf29a 73%, #c3f28b 73%, #c3f28b 85%, #d5f28b 85%, #d5f28b 100%); }
+      background-image: linear-gradient(to right, #f2f08b 10%, #f2f08b 18%, #f2cd8b 18%, #f2cd8b 29%, #96f28b 29%, #96f28b 34%, #baf28b 34%, #baf28b 55%, #f2e58b 55%, #f2e58b 73%, #8bf28c 73%, #8bf28c 85%, #e0f28b 85%, #e0f28b 100%); }
 
 .site-footer a {
   color: #fdc792; }
@@ -4043,9 +4045,6 @@ ul.pagination li {
 
   h1.post-title, h2.post-title {
     font-size: 2.5rem; }
-
-  .blog-title {
-    font-size: 3rem; }
 
   .footer-jump {
     display: none; } }
