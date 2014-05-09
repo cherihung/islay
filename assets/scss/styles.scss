@@ -131,39 +131,46 @@ mark {
     background-color: #ffc336;
 }
 
+@mixin codeStyle {
+    border: 1px solid #ccc;
+    background: $lightGray;
+    border-radius: 3px;
+    font-size: 1.5rem;
+}
+
+
+
 code, tt {
     padding: 1px 3px;
-    font-family: Inconsolata, monospace, sans-serif;
-    font-size: 0.85em;
     white-space: pre-wrap;
-    border: 1px solid #E3EDF3;
-    background: #F7FAFB;
-    border-radius: 2px;
+    @include codeStyle;
+}
+
+tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;    
 }
 
 pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 1.6em 0;
-    border: 1px solid #E3EDF3;
     width: 100%;
     padding: 10px;
-    font-family: Inconsolata, monospace, sans-serif;
-    font-size: 0.9em;
     white-space: pre;
     overflow: auto;
-    background: #F7FAFB;
-    border-radius: 3px;
-}
+    @include codeStyle;
 
-pre code, tt {
-    font-size: inherit;
-    white-space: -moz-pre-wrap;
-    white-space: pre-wrap;
-    background: transparent;
-    border: none;
-    padding: 0;
-}
+    code {
+        @extend tt;
+    }
+
+} //pre
+
 
 ol ol, ul ul,
 ul ol, ol ul {
@@ -517,7 +524,7 @@ h1.post-title, h2.post-title {
     border-top: 1px solid $lightGray;
     margin-top: 3em;
 }
-.label-tag {
+.label-tag a {
 
     @include label($padding: 0.5rem, $text-size:1rem, $bg: $lightGray, $radius: 0px);
 
@@ -526,23 +533,13 @@ h1.post-title, h2.post-title {
     text-align: center;
     margin-left: 0.5rem;
     transition: background-color 0.2s ease;
+    color: $mildGray;
+    font-weight: bold;
 
-    a, a:visited {
-        color: $mildGray;
-        font-weight: bold;
-
-    }
     &:hover {
         background-color: $link-hover-color;
-
-        a {
-            color: $white;
-        }
-
-    }
-    a:hover {
-        color: $white;
         text-decoration: none;
+        color: $white;
     }
 
 } //.label-tag

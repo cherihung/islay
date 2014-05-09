@@ -159,9 +159,9 @@ $paragraph-line-height: 1.75em;
 
 // We use these to style <code> tags
 // $code-color: scale-color($alert-color, $lightness: -27%);
-$code-color: $primary-color;
+$code-color: $darkGray;
 // $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
-// $code-font-weight: bold;
+$code-font-weight: normal;
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
