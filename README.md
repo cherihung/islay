@@ -53,7 +53,7 @@ See it at work on my blog www.cyh.io
 
 Theme author: Chienyi Cheri Hung @cyhung
 
-Version: 0.1.1
+Version: 0.1.2
 
 MIT License. See LICENSE for details.
 
