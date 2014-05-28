@@ -1,0 +1,12 @@
+<meta property="og:site_name" content="{{@blog.title}}" />
+<meta property="og:locale" content="en_us" />
+{{#if post}}
+<meta property="og:title" content="{{meta_title}} - {{@blog.title}}" />
+<meta property="og:type" content="article" /> 
+<meta property="og:url" content="{{#post}}{{url absolute='true'}}{{/post}}" />
+{{else}}
+<meta property="og:title" content="{{@blog.title}}" />
+<meta property="og:description" content="{{meta_description}}" />
+<meta property="og:type" content="website" /> 
+<meta property="og:url" content="{{@blog.url}}" />
+{{/if}}
