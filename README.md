@@ -51,6 +51,7 @@ See it at work on my blog www.cyh.io
 * offcanvas-menu : offcanvas menu containing social links
 * ga-tracking : my Google Analytics tracking code snippet
 * tag-item : customized tag item template
+* ogtag : open graph meta tags
 
 Theme author: Chienyi Cheri Hung @cyhung
 
