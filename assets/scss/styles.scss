@@ -303,7 +303,9 @@ float:left;
 .off-canvas-wrap, .inner-wrap {
         -webkit-backface-visibility: visible;
 }
-
+.txt-center {
+    text-align: center;
+}
 
 /*
  * image reaplcement helper class, adpated from h5bp.com/u
@@ -575,7 +577,7 @@ div#at4-share {
 }
 
 ul.off-canvas-list {
-    text-align: center;
+    text-align: left;
     li {
         font-size: 1.3rem;
         label {

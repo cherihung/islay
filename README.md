@@ -54,7 +54,7 @@ See it at work on my blog www.cyh.io
 
 Theme author: Chienyi Cheri Hung @cyhung
 
-Version: 0.1.2
+Version: 0.1.3
 
 MIT License. See LICENSE for details.
 
