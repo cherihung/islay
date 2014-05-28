@@ -2812,7 +2812,7 @@ ul.off-canvas-list {
     margin: 0; }
   ul.off-canvas-list li a {
     display: block;
-    padding: 0.66667rem;
+    padding: 0.66667rem 0.66667rem 0.66667rem 1rem;
     color: rgba(255, 255, 255, 0.7);
     border-bottom: 1px solid #262626;
     transition: background 300ms ease; }
@@ -3559,7 +3559,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-image: linear-gradient(to right, #f2e08b 10%, #f2e08b 18%, #b8f28b 18%, #b8f28b 29%, #bdf28b 29%, #bdf28b 34%, #f2dd8b 34%, #f2dd8b 55%, #d5f28b 55%, #d5f28b 73%, #b0f28b 73%, #b0f28b 85%, #8df28b 85%, #8df28b 100%); }
+    background-image: linear-gradient(to right, #def28b 10%, #def28b 18%, #94f28b 18%, #94f28b 29%, #8bf29f 29%, #8bf29f 34%, #def28b 34%, #def28b 55%, #c3f28b 55%, #c3f28b 73%, #f2d28b 73%, #f2d28b 85%, #f2e98b 85%, #f2e98b 100%); }
 
 a {
   color: #0f0f0f;
@@ -3707,6 +3707,9 @@ hr {
 
 .off-canvas-wrap, .inner-wrap {
   -webkit-backface-visibility: visible; }
+
+.txt-center {
+  text-align: center; }
 
 /*
  * image reaplcement helper class, adpated from h5bp.com/u
@@ -3934,7 +3937,7 @@ div#at4-share {
   border-left: none; }
 
 ul.off-canvas-list {
-  text-align: center; }
+  text-align: left; }
   ul.off-canvas-list li {
     font-size: 1.3rem; }
     ul.off-canvas-list li label {
@@ -4000,7 +4003,7 @@ ul.pagination li {
       top: 0;
       left: 0;
       right: 0;
-      background-image: linear-gradient(to right, #e3f28b 10%, #e3f28b 18%, #b3f28b 18%, #b3f28b 29%, #a9f28b 29%, #a9f28b 34%, #e1f28b 34%, #e1f28b 55%, #e1f28b 55%, #e1f28b 73%, #c4f28b 73%, #c4f28b 85%, #8cf28b 85%, #8cf28b 100%); }
+      background-image: linear-gradient(to right, #f2e08b 10%, #f2e08b 18%, #8bf298 18%, #8bf298 29%, #e0f28b 29%, #e0f28b 34%, #d2f28b 34%, #d2f28b 55%, #b1f28b 55%, #b1f28b 73%, #8bf298 73%, #8bf298 85%, #a7f28b 85%, #a7f28b 100%); }
 
 .site-footer a {
   color: #fdc792; }

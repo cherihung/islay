@@ -50,10 +50,11 @@ See it at work on my blog www.cyh.io
 * disqus-thread : my Disqus comment embed code
 * offcanvas-menu : offcanvas menu containing social links
 * ga-tracking : my Google Analytics tracking code snippet
+* tag-item : customized tag item template
 
 Theme author: Chienyi Cheri Hung @cyhung
 
-Version: 0.1.2
+Version: 0.1.3
 
 MIT License. See LICENSE for details.
 
