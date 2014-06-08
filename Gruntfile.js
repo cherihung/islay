@@ -14,8 +14,11 @@ module.exports = function (grunt) {
 	    sass: {
 	    	debug: {
 	          options: {  
-	          	sourceMap: true,
-	          	outputStyle: 'nested'
+	          	sourcemap: true,
+	          	debugInfo: true,
+	          	style: 'nested',
+	          	noCache: true,
+	          	quiet: true
 	          },	
 	          files : {
 	            'assets/css/styles.min.css': 'assets/scss/styles.scss',
@@ -24,7 +27,9 @@ module.exports = function (grunt) {
 	        },
 	        dist: {
 	          options: {
-	        	outputStyle: 'compressed'
+	        	style: 'compressed',
+	        	noCache: true,
+	        	quiet: true
 	          },
 	          files: {
 	          	'assets/css/styles.min.css': 'assets/scss/styles.scss'
@@ -76,16 +81,12 @@ module.exports = function (grunt) {
       	},
 	    watch: {
 	        css: {
-	          files: ['assets/scss/*'],
+	          files: ['assets/scss/**/*','assets/scss/*'],
 	          tasks: ['css:debug']
 	        },
 	        js: {
 	          files: ['assets/js/*'],
 	          tasks: ['js:debug']
-	        },
-	        all: {
-	          files: ['assets/scss/*', 'assets/js/*'],
-	          tasks: ['js:debug','css:debug']	
 	        }
 	      }
       };
