@@ -4,7 +4,6 @@
 
 @import "global";
 @import "grid";
-@import "type";
 
 //
 // @variables
@@ -17,7 +16,6 @@ $tabs-navigation-bg-color: #efefef !default;
 $tabs-navigation-active-bg-color: #fff !default;
 $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%) !default;
 $tabs-navigation-font-color: #222 !default;
-$tabs-navigation-active-font-color: $tabs-navigation-font-color !default;
 $tabs-navigation-font-size: rem-calc(16) !default;
 $tabs-navigation-font-family: $body-font-family !default;
 
@@ -31,11 +29,9 @@ $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
     .tabs {
       @include clearfix;
       margin-bottom: 0 !important;
-      margin-left: 0;
-      dd, .tab-title {
+      dd {
         position: relative;
         margin-bottom: 0 !important;
-        list-style: none;
         float: $default-float;
         > a {
           display: block;
@@ -46,18 +42,18 @@ $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
           font-size: $tabs-navigation-font-size;
           &:hover { background: $tabs-navigation-hover-bg-color; }
         }
-        &.active a { background: $tabs-navigation-active-bg-color; color:$tabs-navigation-active-font-color; }
+        &.active a { background: $tabs-navigation-active-bg-color; }
       }
       &.radius {
-        dd:first-child, .tab:first-child {
+        dd:first-child {
           a { @include side-radius($default-float, $global-radius); }
         }
-        dd:last-child, .tab:last-child {
+        dd:last-child {
           a { @include side-radius($opposite-direction, $global-radius); }
         }
       }
       &.vertical {
-        dd, .tab {
+        dd {
           position: inherit;
           float: none;
           display: block;

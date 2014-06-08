@@ -71,12 +71,12 @@ module.exports = function (grunt) {
 
       	copy: {
 	        debug: {
-	          files: [{
-	            src: [
-	                'assets/js/index.js'
-	            ],
-	            dest: 'assets/js/index.min.js'
-	          }]
+	          	files: [{
+	            	src: [
+	                	'assets/js/index.js'
+	            	],
+	            	dest: 'assets/js/index.min.js'
+	          	}]
 	        }
       	},
 	    watch: {

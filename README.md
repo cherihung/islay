@@ -1,6 +1,6 @@
 ## Islay: A Ghost blog theme with Foundation 5
 
-#### Theme uses Foundation 5.2.3. Support compilation using Mixture or Grunt.
+#### Theme uses Foundation 5.2.2. Support compilation using Mixture or Grunt.
 
 See it at work on my blog [www.cyh.io](http://www.cyh.io)
 
