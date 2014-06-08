@@ -22,7 +22,7 @@ See it at work on my blog www.cyh.io
 #### TODOs:
 
 * Integrate use of Bourbon
-* Create Grunt version for future builds
+* Use Foundation's interchange.js to responsively serve background image
 
 #### Foundation Use:
 
@@ -52,9 +52,13 @@ See it at work on my blog www.cyh.io
 * ga-tracking : my Google Analytics tracking code snippet
 * tag-item : customized tag item template
 
+#### Build using Grunt:
+
+The project is natively set up to work perfectly using Mixture. In addition, it now supports building using Grunt.
+
 Theme author: Chienyi Cheri Hung @cyhung
 
-Version: 0.1.3
+Version: 0.1.4
 
 MIT License. See LICENSE for details.
 
