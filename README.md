@@ -1,8 +1,8 @@
 ## Islay: A Ghost blog theme with Foundation 5
 
-#### Theme uses F5 framework. Compiled using Mixture.
+#### Theme uses Foundation 5.2.3. Support compilation using Mixture or Grunt.
 
-See it at work on my blog www.cyh.io
+See it at work on my blog [www.cyh.io](http://www.cyh.io)
 
 #### Completed Features:
 
@@ -54,12 +54,26 @@ See it at work on my blog www.cyh.io
 
 #### Build using Grunt:
 
-The project is natively set up to work perfectly using Mixture. In addition, it now supports building using Grunt.
+The project is natively set up to work perfectly using Mixture. In addition, it now supports building using Grunt. The grunt tasks are set up to mimic the system Mixture uses. Theme development using either method should work just fine.
 
-Theme author: Chienyi Cheri Hung @cyhung
+* See package.json for npm dependancies
+* Run `grunt` to compile and distribute minified css and js for the live site to use
+* Run `grunt debug` to compile nested css and unminified js for use during debugging or development
+* Run `grunt js:debug` or `grunt css:debug` separate if you just want to compile either css or js for debugging or development
+* Run `grunt watch` will trigger js:debug and css:bebug when either a scss or js file changes
+* Remember to run `grunt` after development to get the proper production files compiled
 
-Version: 0.1.4
+#### IMPORTANT NOTES:
+
+* To properly build using grunt, you need to have both Ruby and Sass installed on your machine. This is a requirement for grunt-contrib-sass.
+
+* I chose to use grunt-contrib-sass over the faster grunt-sass because it supports all the Sass features fully. Grunt-sass does not. This is key to process the custom functions I wrote for the theme.
+
+* Foundation 5 currently supports up to Sass 3.2. It will still compile fine if you have Sass 3.3 installed (like me). But it may not work past that version. See [this issue](https://github.com/zurb/foundation/pull/4392) for more information. I put a quite option in the grunt task to mute any deprecation warning. To see them, simply comment out that opton in grunt.js yourself.
+
+
+**Theme author: Chienyi Cheri Hung @cyhung**
+
+**Version: 0.1.4**
 
 MIT License. See LICENSE for details.
-
-
