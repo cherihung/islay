@@ -1,84 +1,52 @@
 // Theme Islay for Ghost - style setting & functions
 // Author: Chienyi Cheri Hung @cyhung
 
-//colors definitions
+@import "functions/init";
+
 $black: #0f0f0f;
-$gray: #666;
-$darkGray: #353535;
-$mildGray: #424242;
-$lightGray: #e7e7e7;
+$white: #fcfcfc;
 $sweetRed: #f04124;
 $warmRed: #d35a26;
 $warmGreen: #43AC6A;
 $sweetGreen: #78c063;
-$tangerine: #fc942d;
-$paleYellow: #feffc9;
 $aquaBlue: #008CBA;
 $paleBlue: #a0d3e8;
-$white: #fcfcfc;
+$tangerine: #fc942d;
+$paleYellow: #feffc9;
+
+$palettes: (
+  shades: (
+    darkGray: lighten($black, 5%),
+    mildGray: lighten($black, 30%),
+    gray: lighten($black, 45%),
+    lightGray: lighten($black, 85%)
+  ),
+  links: (
+    default: $black,
+    hover: $tangerine,
+    footer: lighten($tangerine, 20%),
+  ),
+  tooltip: (
+    color: $black,
+    background: darken($tangerine, 5%)
+  ),
+  pagination: (
+    link-active-background: tangerine,
+    color: lighten($black, 55%)
+  )
+
+);
 
 //color usage definitions
-$link-color: $black;
-$link-hover-color: $tangerine;
-$site-head-background: $mildGray;
-$site-footer-background: #111;
+$site-head-background: palette(shades, mildGray);
+$site-footer-background: palette(shades, darkGray);
 $stripe-base-color: #F2C38B;
 
 //fonts
 $body-font-size: 2rem;
 $icon-font-location: "../fonts/";
 
-//mixin & functions
-
-//generate a stripe pattern
-
-//generate random percentage number
-@function rand($max) {
-
-  @return percentage(random($max)/100); 
-
-}
-
-//function to 1) generate hues based on a given hex color 2) join hues with explicit stops to make a list 3) return a set of harsh-stop gradient
-@function create_gradient_harsh($color, $stops) {
-	
-	$number_of_stops: length($stops);
-	$hues: ();
-
- @for $i from 1 to $number_of_stops {
-    @if nth($stops, $i) > 1 {
-      $hue: adjust-hue($color, rand(100));
-
-     $hues: append($hues, $hue nth($stops, $i), comma); 
-      @if $i < $number_of_stops {
-        $hues: append($hues, $hue nth($stops, $i + 1), comma);
-      }
-    }
- }
-  @return $hues;
-}
-
-//function to 1) generate hues based on a given hex color 2) join hues with explicit stops to make a list 3) return a set of blending gradient
-@function create_gradient_blended($color, $stops) {
-	
-	$number_of_stops: length($stops) + 1;
-	$hues: ();
-
-	@for $i from 1 to $number_of_stops {
-    $hue: adjust-hue($color, rand(100)); 
-    $stop: nth($stops, $i);
-	  $hues: append($hues, $hue nth($stops, $i), comma);  
-  }
-	@return $hues;
-}
-
-//function calls to make stripes or gradient, expected $type options: harsh or blended
-@function create_stripes($color, $stops, $direction: to right, $type: harsh) {
-    
-   @return linear-gradient($direction, call(create_gradient_#{$type}, $color, $stops));
-
-}
-
+//mixin
 @mixin stripe_border($height: 0.8rem) {
 
     position: absolute;

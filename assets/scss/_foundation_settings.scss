@@ -159,7 +159,7 @@ $paragraph-line-height: 1.75em;
 
 // We use these to style <code> tags
 // $code-color: scale-color($alert-color, $lightness: -27%);
-$code-color: $darkGray;
+$code-color: palette(shades, darkGray);
 // $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
 $code-font-weight: normal;
 
@@ -778,7 +778,7 @@ $pagination-height: rem-calc(54);
 // We use these to set the list-item properties
 $pagination-li-float: right;
 $pagination-li-height: inherit;
-$pagination-li-font-color: #999;
+$pagination-li-font-color: palette(pagination, color);
 $pagination-li-font-size: rem-calc(22);
 // $pagination-li-margin: rem-calc(5);
 
@@ -786,7 +786,7 @@ $pagination-li-font-size: rem-calc(22);
 $pagination-link-pad: rem-calc(0.5 15 0.5 15);
 // $pagination-link-font-color: #999;
 // $pagination-link-active-bg: scale-color(#fff, $lightness: -10%);
- $pagination-link-active-bg: $link-hover-color;
+$pagination-link-active-bg: palette(pagination, link-active-bg);
 
 // We use these for disabled anchor links
 // $pagination-link-unavailable-cursor: default;

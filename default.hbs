@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+    {{#if post}}
+    <title>{{meta_title}} - {{@blog.title}}</title>
+    {{else}}
     <title>{{meta_title}}</title>
+    {{/if}}
     <meta name="description" content="{{meta_description}}" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -16,7 +19,6 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,500,500italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{asset "css/styles.min.css"}}" />   
     <script src="{{asset "js/vendor/modernizr.min.js"}}"></script>
-    {{> ogtags}}
     {{ghost_head}}
     {{> ga-tracking}}
 </head>

@@ -1,17 +1,7 @@
 // Theme Islay for Ghost - main stylesheet
 // Author: Chienyi Cheri Hung @cyhung
 
-@charset "UTF-8";
-
-//my own settings and mixins and such
-@import "islay";
-//Global Foundation Settings
-@import "foundation_settings";
-//Foundation styles import, selective
-@import "foundation";
-//normalize it!
-@import "normalize";
-
+@import "init"; //file that imports everything
 
 /* ==========================================================================
    Table of Contents
@@ -118,11 +108,11 @@ body {
 }
 
 a {
-    color: $link-color;
+    color: palette(links, default);
     transition: color ease 0.2s;
 
     &:hover {
-    color: $link-hover-color;
+    color: palette(links, hover);
     text-decoration: none;
     }
 } //a
@@ -133,7 +123,7 @@ mark {
 
 @mixin codeStyle {
     border: 1px solid #ccc;
-    background: $lightGray;
+    background: palette(shades, lightGray);
     border-radius: 3px;
     font-size: 1.5rem;
 }
@@ -337,9 +327,9 @@ float:left;
     display: none;
     padding: 4px 8px 5px 8px;
     text-align: left;
-    color: $black;
+    color: palette(tooltip, color);
     line-height: 1.1em;
-    background: darken($link-hover-color,5%);
+    background: palette(tooltip, background);
     border-radius:10px;
     transition: opacity 0.3s ease, top 0.3s ease;
     //max-width: 150px;
@@ -361,7 +351,7 @@ float:left;
 }
 
 .button-arrow-up {
-  @include button($button-sml, $gray);
+  @include button($button-sml, palette(shades, gray));
 }
 
 
@@ -407,7 +397,7 @@ float:left;
 .author-image {
 
     margin-right: 1rem;
-    border: 1px solid $gray;
+    border: 1px solid palette(shades, gray);
     border-radius: 0.3em;
 
     img {
@@ -422,7 +412,7 @@ float:left;
         margin: 0;
     }
     a {
-        color: $lightGray;
+        color: palette(shades, lightGray);
     }
     h1 {
         text-align: center;
@@ -430,15 +420,15 @@ float:left;
     }
     .blog-description {
         line-height: 1.6em; 
-        color: $lightGray;   
+        color: palette(shades, lightGray);   
         text-align: center;
         margin-top: 0.8em;
         a {
-            border-bottom: 1px dotted $lightGray;
+            border-bottom: 1px dotted palette(shades, lightGray);
         }
     } //blog-description
     a:hover {
-            color: $link-hover-color;
+            color: palette(links, hover);
     }
     .blog-logo {
         text-align: center;
@@ -478,6 +468,11 @@ float:left;
     background: $white;
 }
 
+
+/* ==========================================================================
+   5. Single Post
+   ========================================================================== */
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post, #disqus_thread {
     margin: 4rem auto;
@@ -504,11 +499,14 @@ h1.post-title, h2.post-title {
         margin-top: 1.6rem;
 
     .continue {
-        border-bottom: 1px dashed $lightGray;
+        border-bottom: 1px dashed palette(shades, lightGray);
         font-size: 1.1rem;
         display: inline-block;
         text-align: right;
         width: 100%;
+    }
+    p a {
+        text-decoration: underline;
     }
 } //.post-excerpt 
 
@@ -516,30 +514,35 @@ h1.post-title, h2.post-title {
     display: inline-block;
     margin: 5px 0;
     font-size: 1rem;
-    color: $gray;
+    color: palette(shades, gray);
 }
 .post-footer {
     margin-top: 1.8rem;
 }
 
+.feature-image {
+    border: 5px solid palette(shades, lightGray);
+    margin-bottom: 0.5rem;
+}
+
 .comments {
-    border-top: 1px solid $lightGray;
+    border-top: 1px solid palette(shades, lightGray);
     margin-top: 3em;
 }
 .label-tag a {
 
-    @include label($padding: 0.5rem, $text-size:1rem, $bg: $lightGray, $radius: 0px);
+    @include label($padding: 0.5rem, $text-size:1rem, $bg: palette(shades, lightGray), $radius: 0px);
 
     display: inline-block;
     text-transform: uppercase;
     text-align: center;
     margin-left: 0.5rem;
     transition: background-color 0.2s ease;
-    color: $mildGray;
+    color: palette(shades, mildGray);
     font-weight: bold;
 
     &:hover {
-        background-color: $link-hover-color;
+        background-color: palette(links, hover);
         text-decoration: none;
         color: $white;
     }
@@ -599,7 +602,7 @@ ul.off-canvas-list {
     text-transform: uppercase;
     
     h3 {
-        color: $darkGray;
+        color: palette(shades, darkGray);
     }
 } //.tag-archive-header
 
@@ -673,11 +676,11 @@ ul.pagination {
 } //.site-footer
 
 .site-footer a {
-    color: lighten($link-hover-color, 20%);
+    color: palette(links, footer);
 }
 
 .site-footer a:hover {
-    color:$link-hover-color;
+    color: palette(links, hover);
 }
 
 .poweredby {

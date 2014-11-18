@@ -1,0 +1,7 @@
+/**
+ * Mapping function to better organize color variables
+ * Idea from http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ */
+@function palette($palette, $color) {
+    @return map-get(map-get($palettes, $palette), $color);
+};
