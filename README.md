@@ -70,7 +70,7 @@ The project is natively set up to work perfectly using Mixture. In addition, it 
 
 **Theme author: Chienyi Cheri Hung @cyhung**
 
-**Version: 0.1.6*
+**Version: 0.1.6**
 
 MIT License. See LICENSE for details.
 
