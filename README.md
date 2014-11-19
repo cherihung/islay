@@ -81,8 +81,9 @@ MIT License. See LICENSE for details.
 
 #### LASTEST UPDATE LOG 11.17.2014:
 
-* v.0.1.5
-To use Ghost 0.5.0 features: Added Cover Image displaying inside the post; Removes call to ogtag partial. 
-Link in post-excerpt now has the underline style as it should.
-Added in /functions/ folder, reorder the strucutre.
-Added in a Sass map to more semantically and easily organize color definitions (idea from http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/)
+**v.0.1.5**
+
+* To use Ghost 0.5.0 features: Added Cover Image displaying inside the post; Removes call to ogtag partial. 
+* Link in post-excerpt now has the underline style as it should.
+* Added in /functions/ folder, reorder the structure.
+* Added in a Sass map to more semantically and easily organize color definitions (idea from http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/)
