@@ -70,11 +70,11 @@ The project is natively set up to work perfectly using Mixture. In addition, it 
 
 **Theme author: Chienyi Cheri Hung @cyhung**
 
-**Version: 0.1.5**
+**Version: 0.1.6*
 
 MIT License. See LICENSE for details.
 
-#### LASTEST UPDATE LOG 11.17.2014:
+#### LASTEST UPDATES:
 
 **v0.1.6**
 
