@@ -79,6 +79,18 @@ module.exports = function (grunt) {
 	          	}]
 	        }
       	},
+
+		autoprefixer: {
+			options: {
+			    browsers: ['last 2 versions']
+			},
+            dist: {
+                files: {
+                    'assets/css/styles.min.css': 'assets/css/styles.min.css'
+                }
+            }
+        },
+
 	    watch: {
 	        css: {
 	          files: ['assets/scss/**/*','assets/scss/*'],
@@ -94,6 +106,6 @@ module.exports = function (grunt) {
     grunt.registerTask('js:debug', ['clean:js', 'concat', 'uglify:debug', 'copy:debug']);
     grunt.registerTask('css:debug', ['clean:css', 'sass:debug']);
 	grunt.registerTask('debug', ['css:debug', 'js:debug']);
-	grunt.registerTask('default', ['clean', 'sass:dist', 'uglify:dist']);
+	grunt.registerTask('default', ['clean', 'sass:dist', 'uglify:dist', 'autoprefixer']);
 	grunt.initConfig(config);
 }

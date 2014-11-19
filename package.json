@@ -4,21 +4,22 @@
   "author": "Chienyi Cheri Hung @cyhung",
   "description": "Customized theme for my Ghost blog @ www.cyh.io",
   "license": "MIT",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/cherihung/islay.git"
   },
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-autoprefixer": "^2.0.0",
     "grunt-cli": "~0.1.7",
-    "load-grunt-tasks": "~0.2.0",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-uglify": "0.4.0",
     "grunt-contrib-concat": "0.4.0",
     "grunt-contrib-copy": "0.5.0",
-    "grunt-contrib-sass": "0.7.3"
+    "grunt-contrib-sass": "0.7.3",
+    "grunt-contrib-uglify": "0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "load-grunt-tasks": "~0.2.0"
   },
   "engines": {
     "node": ">=0.10.0"

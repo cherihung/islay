@@ -19,11 +19,6 @@ See it at work on my blog [www.cyh.io](http://www.cyh.io)
 * Google Analytics
 * Google Font
 
-#### TODOs:
-
-* Integrate use of Bourbon
-* Use Foundation's interchange.js to responsively serve background image
-
 #### Foundation Use:
 
 * see js/foundation.mix.js for foundation JS compiled
@@ -51,7 +46,7 @@ See it at work on my blog [www.cyh.io](http://www.cyh.io)
 * offcanvas-menu : offcanvas menu containing social links
 * ga-tracking : my Google Analytics tracking code snippet
 * tag-item : customized tag item template
-* -ogtag : open graph meta tags- No longer needed with Ghost v0.5.0.
+* ~~ogtag : open graph meta tags~~ No longer needed with Ghost v0.5.0.
 
 #### Build using Grunt:
 
@@ -75,13 +70,17 @@ The project is natively set up to work perfectly using Mixture. In addition, it 
 
 **Theme author: Chienyi Cheri Hung @cyhung**
 
-**Version: 0.1.5**
+**Version: 0.1.6*
 
 MIT License. See LICENSE for details.
 
-#### LASTEST UPDATE LOG 11.17.2014:
+#### LASTEST UPDATES:
 
-**v.0.1.5**
+**v0.1.6**
+
+* Added Autuprefixer package and grunt task
+
+**v0.1.5**
 
 * To use Ghost 0.5.0 features: Added Cover Image displaying inside the post; Removes call to ogtag partial. 
 * Link in post-excerpt now has the underline style as it should.
