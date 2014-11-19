@@ -607,18 +607,7 @@
   };
 
 }(jQuery, this, this.document));
-
-
-
-
-
-
-
-
-
-
-
-;(function ($, window, document, undefined) {
+;;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.offcanvas = {
@@ -679,9 +668,7 @@
     reflow : function () {}
   };
 }(jQuery, this, this.document));
-
-
-;(function ($, window, document, undefined) {
+;;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.reveal = {
@@ -1111,10 +1098,7 @@
     };
   }
 }(jQuery, this, this.document));
-
-
-
-;(function ($, window, document, undefined) {
+;;(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.topbar = {
