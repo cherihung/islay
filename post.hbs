@@ -10,7 +10,7 @@
             <section class="post-meta">
                 <time datetime="{{date format='MM-DD-YYYY'}}">PUBLISHED: {{date format="MM.DD.YYYY"}}</time>
             </section>
-            <div class="feature-image"><img src="{{image}}"></div>
+            {{#if image }}<div class="feature-image"><img src="{{image}}"></div>{{/if}}
             <section class="post-content">
                 {{content}}
             </section>
