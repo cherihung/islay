@@ -14,7 +14,12 @@ $paleBlue: #a0d3e8;
 $tangerine: #fc942d;
 $paleYellow: #feffc9;
 
+//color usage definitions
 $palettes: (
+  body: (
+    bgdColor: $black, //this is only visible as the sidebar, default if there is no Blog Cover
+    fontColor: $black  
+  ),
   shades: (
     darkGray: lighten($black, 5%),
     mildGray: lighten($black, 30%),
@@ -33,13 +38,21 @@ $palettes: (
   pagination: (
     link-active-background: tangerine,
     color: lighten($black, 55%)
+  ),
+  theme: (
+    primary: $aquaBlue,
+    secondary: $sweetGreen,
+    alert: $sweetRed,
+    success: $warmGreen,
+    warning: $warmRed,
+    info: $paleBlue
+  ),
+  footer: (
+    bgdColor: lighten($black, 5%)
   )
 
 );
 
-//color usage definitions
-$site-head-background: palette(shades, mildGray);
-$site-footer-background: palette(shades, darkGray);
 $stripe-base-color: #F2C38B;
 
 //fonts

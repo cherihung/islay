@@ -40,7 +40,7 @@
 
 // We use these to control various global styles
 // $body-bg: #fff;
-$body-font-color:  $black;
+$body-font-color:  palette(body, fontColor);
 $body-font-family: 'Roboto', Helvetica, arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -54,12 +54,12 @@ $body-font-family: 'Roboto', Helvetica, arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: $aquaBlue;
-$secondary-color: $sweetGreen;
-$alert-color: $sweetRed;
-$success-color: $warmGreen;
-$warning-color: $warmRed;
-$info-color: $paleBlue;
+$primary-color: palette(theme, primary);
+$secondary-color: palette(theme, secondary);
+$alert-color: palette(theme, alert);
+$success-color: palette(theme, success);
+$warning-color: palette(theme, warning);
+$info-color: palette(theme, info);
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
