@@ -18,6 +18,7 @@ See it at work on my blog [www.cyh.io](http://www.cyh.io)
 * Disqus comment on each post
 * Google Analytics
 * Google Font
+* Control blog background image using Ghost's Blog Cover setting
 
 #### Foundation Use:
 
@@ -29,8 +30,9 @@ See it at work on my blog [www.cyh.io](http://www.cyh.io)
 * /foundation/ : includes all Foundation 5 components
 * _foundation.scss : @import statements for F5 components included
 * _foundation_setting.scss : controlling variables for F5 styles 
-* _islay.scss : controlling variables and customized functions for this theme
 * _normalize.scss : by Nicolas Gallagher http://necolas.github.io/normalize.css/
+* /functions/ : custom functions utilized by this theme
+* _islay.scss : controlling variables and customized functions for this theme
 * styles.scss : main stylesheet for this theme
 
 #### Partials:
@@ -70,11 +72,16 @@ The project is natively set up to work perfectly using Mixture. In addition, it 
 
 **Theme author: Chienyi Cheri Hung @cyhung**
 
-**Version: 0.1.6**
+**Version: 0.1.7**
 
 MIT License. See LICENSE for details.
 
 #### LASTEST UPDATES:
+
+**v0.1.7**
+
+* Added optional background-image using Ghost's @blog.cover setting. If no blog cover, defaults to black.
+* Removed hard-coded background-image in theme style.
 
 **v0.1.6**
 
