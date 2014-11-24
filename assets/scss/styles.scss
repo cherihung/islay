@@ -183,8 +183,8 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #efefef;
-    margin: 3.2em 0;
+    border-top: 1px solid palette(postContent, hr);
+    margin: 1.5em 0;
     padding: 0;
 }
 
@@ -349,7 +349,25 @@ float:left;
   @include button($button-sml, palette(shades, gray));
 }
 
-
+.primary.text, .primary.text a {
+    color: palette(theme, primary);
+}
+.secondary.text, .secondary.text a {
+    color: palette(theme, secondary);
+}
+.alert.text, .alert.text a{
+    color: palette(theme, alert);
+}
+.success.text, .success.text a {
+    color: palette(theme, success);
+}
+.warning.text, .warning.text a {
+    color: palette(theme, warning);
+}
+.info.text, .info.text a {
+    color: palette(theme, info);
+}
+  
 /* ==========================================================================
    4. General - The main styles for the the theme
 ========================================================================== */
@@ -487,6 +505,9 @@ h1.post-title, h2.post-title {
         text-decoration: underline;
     }
 
+    h3 {
+        color: palette(postContent, h3Head);
+    }
 } //.post-content
 
 .post-excerpt {

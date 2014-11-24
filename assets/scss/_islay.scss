@@ -10,7 +10,7 @@ $warmRed: #d35a26;
 $warmGreen: #43AC6A;
 $sweetGreen: #78c063;
 $aquaBlue: #008CBA;
-$paleBlue: #a0d3e8;
+$paleBlue: #94c9dd;
 $tangerine: #fc942d;
 $paleYellow: #feffc9;
 
@@ -19,6 +19,10 @@ $palettes: (
   body: (
     bgdColor: $black, //this is only visible as the sidebar, default if there is no Blog Cover
     fontColor: $black  
+  ),
+  postContent: (
+    hr: lighten($black, 85%),
+    h3Head: darken($warmGreen, 15%)
   ),
   shades: (
     darkGray: lighten($black, 5%),
